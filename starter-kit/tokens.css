@@ -3,28 +3,44 @@
    <link rel="stylesheet" href="css/styles.css" />
    <link rel="stylesheet" href="css/tokens.css" />
    Change these values per client. Nothing else needs editing.
+
+   ------------------------------------------------------------
+   OFFICIAL WAVY SITES BRAND PALETTE (sampled from 2026 logos)
+   Navy ink (wordmark text) ....... #0e2547
+   Wave blue ...................... #1490c0
+   Wave teal ...................... #0aa8b4
+   Wave mint (highlights) ......... #25d4b4
+   Tagline teal (script) .......... #0f9cae
+   Accent green ("in") ............ #8bc53f
+   ------------------------------------------------------------
+   LOGO ASSET RULES (in /assets/logos/)
+   wavysites-mark.webp ............ header, hero, favicons
+   wavysites-wordmark-dark.webp ... dark backgrounds (footer)
+   wavysites-wordmark-light.webp .. light backgrounds, docs
+   wavysites-stacked.webp ......... square/stacked placements
+   wavysites-og.png ............... social sharing (1200x630)
    ============================================================ */
 :root {
-  /* Dark base (hero, footer, dark bands) */
-  --bg: #050e1a;
-  --bg-2: #071a2f;
-  --panel: #0c2038;
-  --panel-2: #102942;
+  /* Dark base (hero, footer, dark bands) — navy-tinted ocean */
+  --bg: #061229;
+  --bg-2: #0a1d3a;
+  --panel: #0e2547;
+  --panel-2: #123058;
 
   /* Brand accents — the two gradient colors + highlight */
-  --brand: #17c7e8;   /* primary accent */
-  --brand-2: #12f0c3; /* gradient partner */
-  --gold: #ffbd59;    /* highlight / focus ring */
+  --brand: #1490c0;   /* wave blue */
+  --brand-2: #25d4b4; /* wave mint */
+  --gold: #8bc53f;    /* accent green — focus rings & highlights */
 
   /* Light surfaces */
   --surface: #ffffff;
   --surface-muted: #f3f8fb;
-  --ink: #0b1727;
-  --ink-muted: #4c5f74;
+  --ink: #0e2547;     /* wordmark navy */
+  --ink-muted: #46587a;
 
   /* Re-derived gradients (update if you change --brand colors) */
   --grad-brand: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
-  --grad-dark: linear-gradient(150deg, #04101d 0%, #072036 48%, #03111f 100%);
+  --grad-dark: linear-gradient(150deg, #061229 0%, #0c2450 48%, #05101f 100%);
 
   /* Shape — soften or sharpen per brand */
   --radius: 28px;
