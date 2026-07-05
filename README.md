@@ -1,16 +1,14 @@
-# Wavy Sites 3.0 — Maximum Rebuild
+# Wavy Sites 3.1 — Premium Redesign + Starter Kit
 
-This is a clean, deploy-ready static rebuild of the Wavy Sites website.
+Deploy-ready static Wavy Sites website, upgraded to an agency-grade design system, plus a reusable starter kit for future client builds.
 
-## What this version does
+## What's new in 3.1
 
-- Replaces the deeply nested older project structure with one clean deployable root.
-- Uses static HTML, CSS, and JavaScript for speed and easy Netlify deployment.
-- Includes a modern homepage, client roadmap page, thank-you page, and 404 page.
-- Adds Netlify-ready project inquiry form markup.
-- Adds SEO/AEO/GEO basics: metadata, FAQ schema, ProfessionalService schema, sitemap, robots file, Open Graph tags, canonical URLs, and descriptive alt text.
-- Optimizes images into lightweight WebP assets while preserving the original main logo.
-- Includes documentation and a Claude handoff prompt.
+- **Design system**: fluid type scale (Sora display + Inter body), design tokens, glass surfaces, gradient accents, animated hero aurora and floating orbs, SVG wave dividers, refined shadows and radii.
+- **Micro-interactions**: scroll progress bar, staggered reveal animations, animated hero counters, active nav highlighting, button shine sweep, card hover lift/glow, portfolio image zoom, animated FAQ chevrons.
+- **UX**: mobile drawer closes on Esc/outside tap, sticky mobile CTA auto-hides at the contact form, form submit feedback state, `scroll-padding` for anchor jumps, everything respects `prefers-reduced-motion`.
+- **Starter kit** (`/starter-kit/`): client homepage template, per-client theme tokens, component library reference, and launch checklist — spin up new client sites in minutes.
+- All Netlify form markup, SEO/schema, sitemap, and robots handling preserved from 3.0.
 
 ## File structure
 
@@ -28,6 +26,12 @@ This is a clean, deploy-ready static rebuild of the Wavy Sites website.
   assets/
     logos/
     projects/
+  starter-kit/
+    README.md
+    client-template.html
+    tokens.css
+    COMPONENTS.md
+    LAUNCH-CHECKLIST.md
   docs/
     BUILD_REPORT.md
     CLAUDE_HANDOFF_PROMPT.md

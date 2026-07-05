@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[BUSINESS NAME] | [PRIMARY SERVICE] in [SERVICE AREA]</title>
+  <meta name="description" content="[BUSINESS NAME] provides [SERVICES] for [CUSTOMER TYPE] in [SERVICE AREA]. [ONE TRUST SENTENCE]." />
+  <meta name="robots" content="noindex, nofollow" />
+  <!-- TEMPLATE: change robots to "index, follow" when this becomes a real client site -->
+  <link rel="canonical" href="https://[DOMAIN]/" />
+  <meta name="theme-color" content="#050e1a" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="[BUSINESS NAME] | [TAGLINE]" />
+  <meta property="og:description" content="[SHORT SOCIAL DESCRIPTION]" />
+  <meta property="og:url" content="https://[DOMAIN]/" />
+  <meta property="og:image" content="https://[DOMAIN]/assets/logo.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/webp" href="assets/logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "[BUSINESS NAME]",
+    "url": "https://[DOMAIN]/",
+    "logo": "https://[DOMAIN]/assets/logo.webp",
+    "description": "[SERVICES] for [CUSTOMER TYPE] in [SERVICE AREA].",
+    "areaServed": ["[CITY]", "[REGION]"],
+    "telephone": "[PHONE OR REMOVE]",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="scroll-progress" aria-hidden="true" data-progress></div>
+
+  <header class="site-header" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="[BUSINESS NAME] home">
+        <img src="assets/logo.webp" alt="[BUSINESS NAME] logo" width="52" height="52" />
+        <span>
+          <strong>[BUSINESS NAME]</strong>
+          <small>[TAGLINE]</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Primary navigation" data-nav-menu>
+        <a href="#services" data-nav-link>Services</a>
+        <a href="#work" data-nav-link>[WORK / GALLERY / MENU]</a>
+        <a href="#process" data-nav-link>Process</a>
+        <a class="nav-cta" href="#contact">[PRIMARY CTA]</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- UNDERSTAND: what the business does, for whom, where — in 5 seconds -->
+    <section class="hero section-dark">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">[EYEBROW: WHO THIS IS FOR]</p>
+          <h1>[MAIN PROMISE] <span class="grad-text">[EMOTIONAL PAYOFF].</span></h1>
+          <p class="hero-lede">[2–3 SENTENCES: what you do, who you help, where you serve, why trust you.]</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">[PRIMARY CTA]</a>
+            <a class="btn btn-secondary" href="#work">[SECONDARY CTA]</a>
+          </div>
+          <div class="hero-proof" aria-label="Value points">
+            <span>[PROOF 1]</span>
+            <span>[PROOF 2]</span>
+            <span>[PROOF 3]</span>
+          </div>
+        </div>
+        <div class="hero-card reveal delay-1">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <img class="hero-logo" src="assets/logo.webp" alt="[BUSINESS NAME] brand mark" width="420" height="420" />
+        </div>
+      </div>
+      <div class="wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,64 C240,110 480,20 720,52 C960,84 1200,30 1440,70 L1440,120 L0,120 Z" fill="#ffffff"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- TRUST: 4 quick reasons to believe -->
+    <section class="section trust-strip" aria-label="Core strengths">
+      <div class="container trust-grid" data-stagger>
+        <article class="reveal"><strong>[STRENGTH 1]</strong><span>[ONE LINE]</span></article>
+        <article class="reveal"><strong>[STRENGTH 2]</strong><span>[ONE LINE]</span></article>
+        <article class="reveal"><strong>[STRENGTH 3]</strong><span>[ONE LINE]</span></article>
+        <article class="reveal"><strong>[STRENGTH 4]</strong><span>[ONE LINE]</span></article>
+      </div>
+    </section>
+
+    <!-- EXPLORE: services grouped how customers search -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">[SERVICES EYEBROW]</p>
+          <h2>[SERVICES HEADLINE].</h2>
+          <p>[ONE SENTENCE OF CONTEXT]</p>
+        </div>
+        <div class="cards service-grid" data-stagger>
+          <!-- Repeat per service (3 or 6 works best) -->
+          <article class="card reveal">
+            <span class="card-number">01</span>
+            <h3>[SERVICE NAME]</h3>
+            <p>[WHAT IT INCLUDES AND WHO IT HELPS]</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF: real work only. No fake projects. -->
+    <section class="section section-muted" id="work">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">[PROOF EYEBROW]</p>
+          <h2>[PROOF HEADLINE].</h2>
+        </div>
+        <div class="portfolio-grid" data-stagger>
+          <article class="project-card reveal">
+            <img src="assets/[PROJECT-IMG].webp" alt="[DESCRIBE IMAGE]" loading="lazy" width="700" height="700" />
+            <div>
+              <span>[CATEGORY]</span>
+              <h3>[PROJECT NAME]</h3>
+              <p>[WHAT WAS DONE AND THE RESULT]</p>
+              <a href="[URL]" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECIDE: process + packages remove hesitation -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">How it works</p>
+          <h2>[PROCESS HEADLINE].</h2>
+        </div>
+        <div class="timeline" data-stagger>
+          <article class="timeline-item reveal"><span>01</span><h3>[STEP]</h3><p>[DETAIL]</p></article>
+          <article class="timeline-item reveal"><span>02</span><h3>[STEP]</h3><p>[DETAIL]</p></article>
+          <article class="timeline-item reveal"><span>03</span><h3>[STEP]</h3><p>[DETAIL]</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ: real questions customers ask (also add FAQPage schema) -->
+    <section class="section section-muted" id="faq">
+      <div class="container split-grid">
+        <div class="reveal">
+          <p class="eyebrow">Questions</p>
+          <h2>[FAQ HEADLINE].</h2>
+        </div>
+        <div class="faq-list reveal delay-1">
+          <details>
+            <summary>[QUESTION]</summary>
+            <p>[ANSWER]</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONVERT: Netlify-ready form. Rename form per client. -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">[CONTACT EYEBROW]</p>
+          <h2>[CONTACT HEADLINE].</h2>
+          <p class="large-text">[WHAT TO SEND / WHAT HAPPENS NEXT]</p>
+        </div>
+        <form class="contact-form reveal delay-1" name="[client-form-name]" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="[client-form-name]" />
+          <p class="hidden-field">
+            <label>Do not fill this out if you are human: <input name="bot-field" /></label>
+          </p>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="form-row two-col">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="message">[MESSAGE LABEL]</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+          <button class="btn btn-primary form-button" type="submit" data-form-button>[SUBMIT LABEL] <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#top">
+          <img src="assets/logo.webp" alt="[BUSINESS NAME] logo" width="52" height="52" />
+          <span><strong>[BUSINESS NAME]</strong><small>[TAGLINE]</small></span>
+        </a>
+        <p>[ONE-LINE FOOTER DESCRIPTION]</p>
+      </div>
+      <div>
+        <h2 class="footer-heading">Navigate</h2>
+        <a href="#services">Services</a>
+        <a href="#work">[WORK]</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">[INFO HEADING]</h2>
+        <span>[SERVICE AREA]</span>
+        <span>[HOURS OR REMOVE]</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <small>© <span data-year></span> [BUSINESS NAME]. All rights reserved.</small>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" data-mobile-cta aria-label="Quick action">
+    <a href="#contact">[PRIMARY CTA]</a>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

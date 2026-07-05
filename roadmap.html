@@ -10,15 +10,22 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Wavy Sites Client Success Roadmap" />
   <meta property="og:description" content="A repeatable website build system for client discovery, conversion design, SEO/AEO/GEO, forms, QA, launch, and growth." />
-  <meta property="og:image" content="https://wavysites.com/assets/logos/wavysites-logo.webp" />
+  <meta property="og:image" content="https://wavysites.com/assets/logos/wavysites-og.png" />
+  <meta name="theme-color" content="#050e1a" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="scroll-progress" aria-hidden="true" data-progress></div>
   <header class="site-header" data-header>
     <div class="container nav-shell">
       <a class="brand" href="index.html" aria-label="Wavy Sites home">
-        <img src="assets/logos/wavysites-logo.webp" alt="Wavy Sites logo" width="56" height="56" />
+        <img src="assets/logos/wavysites-mark.webp" alt="Wavy Sites wave mark" width="86" height="44" />
         <span><strong>Wavy Sites</strong><small>Surfing the web in style</small></span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button>
@@ -36,12 +43,17 @@
     <section class="roadmap-hero section-dark">
       <div class="container">
         <p class="eyebrow reveal">Client success roadmap</p>
-        <h1 class="reveal">The build system behind every Wavy Sites project.</h1>
+        <h1 class="reveal">The build system behind <span class="grad-text">every Wavy Sites project.</span></h1>
         <p class="hero-lede reveal delay-1">This roadmap turns a website from a random design into a business growth system: strategy, customer clarity, premium design, working forms, SEO/AEO/GEO, deployment, QA, and post-launch momentum.</p>
         <div class="hero-actions reveal delay-2">
           <a class="btn btn-primary" href="index.html#contact">Start a Project</a>
           <a class="btn btn-secondary" href="index.html#work">View Work</a>
         </div>
+      </div>
+      <div class="wave-divider" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-1px;">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,64 C240,110 480,20 720,52 C960,84 1200,30 1440,70 L1440,120 L0,120 Z" fill="#f3f8fb"></path>
+        </svg>
       </div>
     </section>
 
@@ -49,14 +61,14 @@
       <div class="container roadmap-layout">
         <aside class="roadmap-sidebar reveal" aria-label="Roadmap navigation">
           <h2>Roadmap</h2>
-          <a href="#discover">1. Discover</a>
-          <a href="#strategy">2. Strategy</a>
-          <a href="#design">3. Design</a>
-          <a href="#build">4. Build</a>
-          <a href="#seo">5. SEO/AEO/GEO</a>
-          <a href="#forms">6. Forms</a>
-          <a href="#qa">7. QA & Launch</a>
-          <a href="#growth">8. Growth</a>
+          <a href="#discover" data-nav-link>1. Discover</a>
+          <a href="#strategy" data-nav-link>2. Strategy</a>
+          <a href="#design" data-nav-link>3. Design</a>
+          <a href="#build" data-nav-link>4. Build</a>
+          <a href="#seo" data-nav-link>5. SEO/AEO/GEO</a>
+          <a href="#forms" data-nav-link>6. Forms</a>
+          <a href="#qa" data-nav-link>7. QA & Launch</a>
+          <a href="#growth" data-nav-link>8. Growth</a>
         </aside>
 
         <div>
@@ -163,9 +175,8 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand footer-brand" href="index.html">
-          <img src="assets/logos/wavysites-logo.webp" alt="Wavy Sites logo" width="52" height="52" />
-          <span><strong>Wavy Sites</strong><small>Surfing the web in style</small></span>
+        <a class="footer-brand" href="index.html" aria-label="Wavy Sites home">
+          <img class="footer-wordmark" src="assets/logos/wavysites-wordmark-dark.webp" alt="wavysites.com — surfing the web in style" width="280" height="63" />
         </a>
         <p>The roadmap is the operating system: business strategy, premium design, working forms, SEO/AEO/GEO, deployment, QA, handoff, and growth.</p>
       </div>

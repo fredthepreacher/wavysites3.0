@@ -7,16 +7,25 @@
   <meta name="description" content="Wavy Sites builds fast, mobile-ready websites and digital presence systems for small businesses, ministries, creators, and local service brands." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wavysites.com/" />
-  <meta name="theme-color" content="#071525" />
+  <meta name="theme-color" content="#050e1a" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Wavy Sites | Surfing the Web in Style" />
   <meta property="og:description" content="Premium website design, SEO, local visibility, forms, deployment, and client-ready digital systems for real businesses." />
   <meta property="og:url" content="https://wavysites.com/" />
-  <meta property="og:image" content="https://wavysites.com/assets/logos/wavysites-logo.webp" />
+  <meta property="og:image" content="https://wavysites.com/assets/logos/wavysites-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://wavysites.com/assets/logos/wavysites-og.png" />
 
-  <link rel="preload" as="image" href="assets/logos/wavysites-logo.webp" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preload" as="image" href="assets/logos/wavysites-mark.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
 
   <script type="application/ld+json">
@@ -25,8 +34,8 @@
     "@type": "ProfessionalService",
     "name": "Wavy Sites",
     "url": "https://wavysites.com/",
-    "logo": "https://wavysites.com/assets/logos/wavysites-logo.webp",
-    "image": "https://wavysites.com/assets/logos/wavysites-logo.webp",
+    "logo": "https://wavysites.com/assets/logos/wavysites-mark.webp",
+    "image": "https://wavysites.com/assets/logos/wavysites-og.png",
     "slogan": "Surfing the web in style.",
     "description": "Website design, website redesign, landing pages, local SEO, digital presence support, and conversion-focused website systems for small businesses and organizations.",
     "areaServed": ["Southwest Florida", "Florida", "United States"],
@@ -38,11 +47,12 @@
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="scroll-progress" aria-hidden="true" data-progress></div>
 
   <header class="site-header" data-header>
     <div class="container nav-shell">
       <a class="brand" href="#top" aria-label="Wavy Sites home">
-        <img src="assets/logos/wavysites-logo.webp" alt="Wavy Sites logo" width="56" height="56" />
+        <img src="assets/logos/wavysites-mark.webp" alt="Wavy Sites wave mark" width="86" height="44" />
         <span>
           <strong>Wavy Sites</strong>
           <small>Surfing the web in style</small>
@@ -54,10 +64,10 @@
       </button>
 
       <nav class="main-nav" aria-label="Primary navigation" data-nav-menu>
-        <a href="#services">Services</a>
-        <a href="#systems">Growth System</a>
-        <a href="#work">Work</a>
-        <a href="#process">Process</a>
+        <a href="#services" data-nav-link>Services</a>
+        <a href="#systems" data-nav-link>Growth System</a>
+        <a href="#work" data-nav-link>Work</a>
+        <a href="#process" data-nav-link>Process</a>
         <a href="roadmap.html">Roadmap</a>
         <a class="nav-cta" href="#contact">Start Project</a>
       </nav>
@@ -69,7 +79,7 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">Websites built for real business growth</p>
-          <h1>Premium websites that look sharp, load fast, and turn visitors into action.</h1>
+          <h1>Premium websites that look sharp, load fast, and <span class="grad-text">turn visitors into action.</span></h1>
           <p class="hero-lede">Wavy Sites helps small businesses, ministries, creators, and local service brands launch clean, trustworthy, conversion-focused websites with SEO, forms, deployment, and post-launch growth in mind.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">Start Your Project</a>
@@ -81,12 +91,26 @@
             <span>Form-ready</span>
             <span>Client-ready</span>
           </div>
+          <div class="hero-stats" aria-label="Wavy Sites by the numbers">
+            <article>
+              <strong><span data-counter="5">5</span>+</strong>
+              <span>Live client sites</span>
+            </article>
+            <article>
+              <strong><span data-counter="8">8</span></strong>
+              <span>Phase build system</span>
+            </article>
+            <article>
+              <strong><span data-counter="100">100</span>%</strong>
+              <span>Mobile-first builds</span>
+            </article>
+          </div>
         </div>
 
         <div class="hero-card reveal delay-1" aria-label="Wavy Sites website system overview">
           <div class="orb orb-one"></div>
           <div class="orb orb-two"></div>
-          <img class="hero-logo" src="assets/logos/wavysites-logo.webp" alt="Wavy Sites wave and cross brand mark" width="420" height="420" />
+          <img class="hero-logo" src="assets/logos/wavysites-mark.webp" alt="Wavy Sites interlocking wave brand mark" width="470" height="241" />
           <div class="system-card">
             <span class="system-label">Build Formula</span>
             <strong>Strategy + Design + SEO + Forms + QA</strong>
@@ -94,24 +118,28 @@
           </div>
         </div>
       </div>
-      <div class="wave-line" aria-hidden="true"></div>
+      <div class="wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,64 C240,110 480,20 720,52 C960,84 1200,30 1440,70 L1440,120 L0,120 Z" fill="#ffffff"></path>
+        </svg>
+      </div>
     </section>
 
     <section class="section trust-strip" aria-label="Core strengths">
-      <div class="container trust-grid">
-        <article>
+      <div class="container trust-grid" data-stagger>
+        <article class="reveal">
           <strong>Clear Strategy</strong>
           <span>Business goals first, design second.</span>
         </article>
-        <article>
+        <article class="reveal">
           <strong>Fast Builds</strong>
           <span>Lean, clean code without bloated systems.</span>
         </article>
-        <article>
+        <article class="reveal">
           <strong>Local Visibility</strong>
           <span>Structured for search, maps, and AI answers.</span>
         </article>
-        <article>
+        <article class="reveal">
           <strong>Lead Capture</strong>
           <span>Working CTAs, quote forms, and thank-you flow.</span>
         </article>
@@ -126,18 +154,18 @@
           <p>Every service is shaped around clarity, trust, conversion, and a clean launch path.</p>
         </div>
 
-        <div class="cards service-grid">
+        <div class="cards service-grid" data-stagger>
           <article class="card reveal">
             <span class="card-number">01</span>
             <h3>Website Design & Development</h3>
             <p>Custom websites for service businesses, ministries, local brands, creators, and organizations that need to look professional online.</p>
           </article>
-          <article class="card reveal delay-1">
+          <article class="card reveal">
             <span class="card-number">02</span>
             <h3>Website Redesigns</h3>
             <p>Modernize an old site, fix weak layouts, improve mobile usability, clean up messaging, and make the brand feel current.</p>
           </article>
-          <article class="card reveal delay-2">
+          <article class="card reveal">
             <span class="card-number">03</span>
             <h3>Landing Pages</h3>
             <p>Focused pages for Google Ads, social campaigns, special offers, service pushes, events, donations, and quote requests.</p>
@@ -147,12 +175,12 @@
             <h3>Local SEO, AEO & GEO</h3>
             <p>Titles, descriptions, headings, schema, FAQs, service areas, alt text, sitemap, robots file, and local trust signals.</p>
           </article>
-          <article class="card reveal delay-1">
+          <article class="card reveal">
             <span class="card-number">05</span>
             <h3>Forms & Lead Flow</h3>
             <p>Quote forms, contact forms, job inquiry forms, thank-you pages, Netlify-ready markup, and clear follow-up paths.</p>
           </article>
-          <article class="card reveal delay-2">
+          <article class="card reveal">
             <span class="card-number">06</span>
             <h3>Maintenance & Growth</h3>
             <p>Updates, content improvements, social/Google Business support, landing page optimization, and monthly website care.</p>
@@ -167,22 +195,22 @@
           <p class="eyebrow">More than a pretty page</p>
           <h2>A full digital presence system.</h2>
           <p class="large-text">A strong small-business website should answer the customer’s questions before they ask, show proof quickly, and make the next step obvious.</p>
-          <a class="text-link" href="roadmap.html">View the full client roadmap →</a>
+          <a class="text-link" href="roadmap.html">View the full client roadmap <span aria-hidden="true">→</span></a>
         </div>
-        <div class="system-list reveal delay-1">
-          <article>
+        <div class="system-list reveal delay-1" data-stagger>
+          <article class="reveal">
             <span>Understand</span>
             <p>Hero copy that clearly explains what the business does, who it helps, and where it serves.</p>
           </article>
-          <article>
+          <article class="reveal">
             <span>Trust</span>
             <p>Proof sections, galleries, real projects, reviews if provided, and credentials only when verified.</p>
           </article>
-          <article>
+          <article class="reveal">
             <span>Explore</span>
             <p>Services, products, menus, galleries, models, or programs organized around how customers think.</p>
           </article>
-          <article>
+          <article class="reveal">
             <span>Convert</span>
             <p>Clear CTAs, easy forms, mobile-friendly buttons, and a thank-you path that works after launch.</p>
           </article>
@@ -198,34 +226,34 @@
           <p>Portfolio cards are structured for trust, proof, and fast project review. Update links as each client site goes live.</p>
         </div>
 
-        <div class="portfolio-grid">
+        <div class="portfolio-grid" data-stagger>
           <article class="project-card reveal">
             <img src="assets/projects/residential-finishes.webp" alt="Residential Finishes project logo" loading="lazy" width="700" height="700" />
             <div>
               <span>Local service website</span>
               <h3>Residential Finishes</h3>
               <p>Interior finishing website with quote-focused layout, before/after proof, local visibility, and client-ready form flow.</p>
-              <a href="https://residentialfinishes.com/" target="_blank" rel="noopener">Visit site →</a>
+              <a href="https://residentialfinishes.com/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
-          <article class="project-card reveal delay-1">
+          <article class="project-card reveal">
             <img src="assets/projects/aunttiffs.webp" alt="Aunt Tiff's Place project logo" loading="lazy" width="700" height="700" />
             <div>
               <span>Community website</span>
               <h3>Aunt Tiff’s Place</h3>
               <p>Warm outreach website with clear mission, services, donation direction, reviews, and welcoming user flow.</p>
-              <a href="https://aunttiffsplace.org/" target="_blank" rel="noopener">Visit site →</a>
+              <a href="https://aunttiffsplace.org/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
-          <article class="project-card reveal delay-2">
+          <article class="project-card reveal">
             <img src="assets/projects/communitypools.webp" alt="Community Pools project logo" loading="lazy" width="700" height="700" />
             <div>
               <span>Lead generation page</span>
               <h3>Community Pools</h3>
               <p>Pool service presence built around resurfacing, repair needs, local service areas, and quote conversion.</p>
-              <a href="https://communitypoolsllc.com/" target="_blank" rel="noopener">Visit site →</a>
+              <a href="https://communitypoolsllc.com/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
@@ -235,27 +263,27 @@
               <span>Professional services</span>
               <h3>Classique Insurance</h3>
               <p>Trust-first insurance website direction with family-centered visuals, service clarity, and polished credibility.</p>
-              <a href="https://classique.agency/" target="_blank" rel="noopener">Visit site →</a>
+              <a href="https://classique.agency/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
-          <article class="project-card reveal delay-1">
+          <article class="project-card reveal">
             <img src="assets/projects/adamsstriping.webp" alt="Adams Striping project logo" loading="lazy" width="700" height="700" />
             <div>
               <span>Trade service website</span>
               <h3>Adams Striping</h3>
               <p>Bold service layout with project proof, local SEO structure, and practical conversion improvements.</p>
-              <a href="https://adamsstriping.com/" target="_blank" rel="noopener">Visit site →</a>
+              <a href="https://adamsstriping.com/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
-          <article class="project-card project-card-empty reveal delay-2">
-            <div class="project-placeholder">+</div>
+          <article class="project-card project-card-empty reveal">
+            <div class="project-placeholder" aria-hidden="true">+</div>
             <div>
               <span>Next launch</span>
               <h3>Your Project Here</h3>
               <p>Every new build follows the Wavy Sites roadmap: strategy, design, forms, SEO, deployment, QA, and handoff.</p>
-              <a href="#contact">Start a project →</a>
+              <a href="#contact">Start a project <span aria-hidden="true">→</span></a>
             </div>
           </article>
         </div>
@@ -290,18 +318,18 @@
           <p>A focused build path keeps the project moving without losing quality.</p>
         </div>
 
-        <div class="timeline">
+        <div class="timeline" data-stagger>
           <article class="timeline-item reveal">
             <span>01</span>
             <h3>Discover</h3>
             <p>Collect the business goal, services, service area, customer type, assets, competitors, and conversion target.</p>
           </article>
-          <article class="timeline-item reveal delay-1">
+          <article class="timeline-item reveal">
             <span>02</span>
             <h3>Plan</h3>
             <p>Map the homepage journey, required pages, proof sections, CTA hierarchy, SEO targets, and launch requirements.</p>
           </article>
-          <article class="timeline-item reveal delay-2">
+          <article class="timeline-item reveal">
             <span>03</span>
             <h3>Build</h3>
             <p>Design and develop the site with mobile-first structure, organized assets, strong copy, and reusable patterns.</p>
@@ -311,7 +339,7 @@
             <h3>Optimize</h3>
             <p>Add metadata, schema, sitemap, robots, image alt text, service-area language, performance improvements, and accessibility polish.</p>
           </article>
-          <article class="timeline-item reveal delay-1">
+          <article class="timeline-item reveal">
             <span>05</span>
             <h3>Launch</h3>
             <p>Deploy to Netlify or Vercel, test live forms, check mobile, verify links, and hand off a client-ready package.</p>
@@ -326,7 +354,7 @@
           <p class="eyebrow">Ways to work</p>
           <h2>Choose the level of support that fits the client.</h2>
         </div>
-        <div class="package-grid">
+        <div class="package-grid" data-stagger>
           <article class="package-card reveal">
             <span>Package 01</span>
             <h3>Website-Only Build</h3>
@@ -340,7 +368,7 @@
             </ul>
             <a class="btn btn-secondary" href="#contact">Request Quote</a>
           </article>
-          <article class="package-card featured reveal delay-1">
+          <article class="package-card featured reveal">
             <span>Most Complete</span>
             <h3>Full Digital Presence</h3>
             <p>For clients who want the website plus growth strategy and post-launch support.</p>
@@ -461,7 +489,7 @@
             <label for="message">What do you need the website to accomplish?</label>
             <textarea id="message" name="message" rows="6" required></textarea>
           </div>
-          <button class="btn btn-primary form-button" type="submit">Send Project Request →</button>
+          <button class="btn btn-primary form-button" type="submit" data-form-button>Send Project Request <span aria-hidden="true">→</span></button>
           <p class="form-note">This form is Netlify-ready. After deployment, enable form notifications in Netlify and send a live test submission.</p>
         </form>
       </div>
@@ -471,9 +499,8 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand footer-brand" href="#top">
-          <img src="assets/logos/wavysites-logo.webp" alt="Wavy Sites logo" width="52" height="52" />
-          <span><strong>Wavy Sites</strong><small>Surfing the web in style</small></span>
+        <a class="footer-brand" href="#top" aria-label="Wavy Sites home">
+          <img class="footer-wordmark" src="assets/logos/wavysites-wordmark-dark.webp" alt="wavysites.com — surfing the web in style" width="280" height="63" />
         </a>
         <p>Founder-led website design, development, and digital presence support for brands that need to look credible and convert better online.</p>
       </div>
@@ -498,7 +525,7 @@
     </div>
   </footer>
 
-  <div class="mobile-cta" aria-label="Quick project action">
+  <div class="mobile-cta" data-mobile-cta aria-label="Quick project action">
     <a href="#contact">Start Project</a>
   </div>
 
