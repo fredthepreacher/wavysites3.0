@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Intake | Wavy Sites</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#061229" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/launch.css" />
+</head>
+<body id="top">
+  <header class="site-header" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="Wavy Sites home">
+        <img src="assets/logos/wavysites-mark.webp" alt="Wavy Sites wave mark" width="86" height="44" />
+        <span>
+          <strong>Wavy Sites</strong>
+          <small>Surfing the web in style</small>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container" style="max-width:760px;">
+        <p class="eyebrow">Website intake</p>
+        <h1>Let's get your build started.</h1>
+        <p class="hero-lede" style="color:var(--ink-muted);">Everything below helps Wavy Sites build the right site the first time. Ten minutes now saves back-and-forth later — your build's 7–14 business day window starts once this is in hand.</p>
+
+        <form class="contact-form" name="launch-intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="launch-intake" />
+          <p class="hidden-field">
+            <label>Do not fill this out if you are human: <input name="bot-field" /></label>
+          </p>
+
+          <p class="intake-note">Already paid your deposit? Your order reference below helps us match this intake to your project — it's filled in automatically when you arrive from the confirmation page.</p>
+
+          <div class="form-row two-col">
+            <div>
+              <label for="intake-ref">Order reference</label>
+              <input id="intake-ref" name="order_reference" type="text" placeholder="LW-…" />
+            </div>
+            <div>
+              <label for="intake-email">Email used at checkout</label>
+              <input id="intake-email" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="form-row two-col">
+            <div>
+              <label for="intake-business">Business / company name</label>
+              <input id="intake-business" name="business" type="text" autocomplete="organization" required />
+            </div>
+            <div>
+              <label for="intake-name">Your name</label>
+              <input id="intake-name" name="contact_name" type="text" autocomplete="name" required />
+            </div>
+          </div>
+
+          <div class="form-row two-col">
+            <div>
+              <label for="intake-phone">Phone</label>
+              <input id="intake-phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div>
+              <label for="intake-service-area">Service area(s)</label>
+              <input id="intake-service-area" name="service_area" type="text" placeholder="e.g. Port Charlotte &amp; North Port, FL" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="intake-services">What services or products does your business offer?</label>
+            <textarea id="intake-services" name="services" rows="3" required></textarea>
+          </div>
+
+          <div class="form-row">
+            <label for="intake-pages">Which pages do you want? (e.g. Home, About, Services, Gallery, Contact)</label>
+            <input id="intake-pages" name="desired_pages" type="text" required />
+          </div>
+
+          <div class="form-row two-col">
+            <div>
+              <label for="intake-colors">Brand colors (if you have any)</label>
+              <input id="intake-colors" name="brand_colors" type="text" placeholder="e.g. navy and gold, or a logo file will show them" />
+            </div>
+            <div>
+              <label for="intake-assets">Link to your logo, photos &amp; assets</label>
+              <input id="intake-assets" name="asset_link" type="url" placeholder="Google Drive, Dropbox, etc." />
+            </div>
+          </div>
+          <p class="intake-note" style="margin-top:-8px;">No link handy yet? Reply to your confirmation email with the files attached instead — just mention your order reference.</p>
+
+          <div class="form-row">
+            <label for="intake-social">Social or review links (one per line)</label>
+            <textarea id="intake-social" name="social_links" rows="2"></textarea>
+          </div>
+
+          <div class="form-row">
+            <label for="intake-examples">Competitor or example sites you like (and why)</label>
+            <textarea id="intake-examples" name="examples" rows="3"></textarea>
+          </div>
+
+          <div class="form-row two-col">
+            <div>
+              <label for="intake-contact-info">Contact info to display on the site</label>
+              <input id="intake-contact-info" name="display_contact" type="text" placeholder="Public phone / email you want shown" />
+            </div>
+            <div>
+              <label for="intake-domain">Domain &amp; hosting</label>
+              <select id="intake-domain" name="domain_status">
+                <option value="">Select one</option>
+                <option>I already have a domain</option>
+                <option>I need help getting a domain</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="intake-notes">Anything else Wavy Sites should know?</label>
+            <textarea id="intake-notes" name="notes" rows="4"></textarea>
+          </div>
+
+          <button class="btn btn-primary form-button" type="submit" data-form-button>Submit My Intake <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <small>© <span data-year></span> Wavy Sites. All rights reserved.</small>
+      <a href="index.html">Back to wavysites.com ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/launch.js" defer></script>
+</body>
+</html>
