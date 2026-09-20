@@ -175,7 +175,7 @@
       </div>
     </section>
 
-    <!-- CONVERT: Netlify-ready form. Rename form per client. -->
+    <!-- CONVERT: Netlify-ready form. Rename form per client, then re-add data-netlify="true" netlify-honeypot="bot-field" to the <form> tag below before deploying for a real client -- intentionally omitted here so this scaffold is not picked up as a live Netlify form. -->
     <section class="section contact-section" id="contact">
       <div class="container contact-grid">
         <div class="contact-copy reveal">
@@ -183,7 +183,7 @@
           <h2>[CONTACT HEADLINE].</h2>
           <p class="large-text">[WHAT TO SEND / WHAT HAPPENS NEXT]</p>
         </div>
-        <form class="contact-form reveal delay-1" name="[client-form-name]" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+        <form class="contact-form reveal delay-1" name="[client-form-name]" method="POST" action="/thank-you.html">
           <input type="hidden" name="form-name" value="[client-form-name]" />
           <p class="hidden-field">
             <label>Do not fill this out if you are human: <input name="bot-field" /></label>
