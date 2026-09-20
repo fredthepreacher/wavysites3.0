@@ -5,6 +5,18 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://wavysites.com/work.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://wavysites.com/work/the-chef-crm.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wavysites.com/work/vertical-ops.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://wavysites.com/roadmap.html</loc>
     <priority>0.8</priority>
   </url>

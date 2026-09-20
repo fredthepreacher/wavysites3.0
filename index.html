@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wavy Sites | Websites, SEO & Digital Presence for Small Businesses</title>
-  <meta name="description" content="Wavy Sites builds fast, mobile-ready websites and digital presence systems for small businesses, ministries, creators, and local service brands." />
+  <title>Wavy Sites | Websites, Custom Software & Growth Systems for Businesses</title>
+  <meta name="description" content="Wavy Sites designs and builds websites, custom software, CRMs, and automation for businesses ready to modernize — with SEO and growth strategy built in." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wavysites.com/" />
   <meta name="theme-color" content="#061229" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Wavy Sites | Surfing the Web in Style" />
-  <meta property="og:description" content="Premium website design, SEO, local visibility, forms, deployment, and client-ready digital systems for real businesses." />
+  <meta property="og:title" content="Wavy Sites | Websites, Custom Software & Growth Systems" />
+  <meta property="og:description" content="Premium websites, custom software, CRMs, automation, and search strategy for businesses ready to modernize." />
   <meta property="og:url" content="https://wavysites.com/" />
   <meta property="og:image" content="https://wavysites.com/assets/logos/wavysites-og.png" />
   <meta property="og:image:width" content="1200" />
@@ -31,17 +31,71 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Wavy Sites",
-    "url": "https://wavysites.com/",
-    "logo": "https://wavysites.com/assets/logos/wavysites-mark.webp",
-    "image": "https://wavysites.com/assets/logos/wavysites-og.png",
-    "slogan": "Surfing the web in style.",
-    "description": "Website design, website redesign, landing pages, local SEO, digital presence support, and conversion-focused website systems for small businesses and organizations.",
-    "areaServed": ["Southwest Florida", "Florida", "United States"],
-    "founder": {"@type": "Person", "name": "Freddie Pierre"},
-    "serviceType": ["Website Design", "Website Development", "Website Redesign", "Local SEO", "Landing Pages", "Digital Presence Management"],
-    "sameAs": []
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://wavysites.com/#organization",
+        "name": "Wavy Sites",
+        "url": "https://wavysites.com/",
+        "logo": "https://wavysites.com/assets/logos/wavysites-mark.webp",
+        "image": "https://wavysites.com/assets/logos/wavysites-og.png",
+        "slogan": "Surfing the web in style.",
+        "founder": {"@type": "Person", "name": "Freddie Pierre"},
+        "sameAs": []
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://wavysites.com/#service",
+        "name": "Wavy Sites",
+        "url": "https://wavysites.com/",
+        "logo": "https://wavysites.com/assets/logos/wavysites-mark.webp",
+        "image": "https://wavysites.com/assets/logos/wavysites-og.png",
+        "slogan": "Surfing the web in style.",
+        "description": "Wavy Sites designs and builds websites, custom software, CRMs, and automation for businesses that have outgrown basic tools — built around how you actually work, not a template.",
+        "areaServed": ["Southwest Florida", "Florida", "United States"],
+        "founder": {"@type": "Person", "name": "Freddie Pierre"},
+        "serviceType": ["Website Design", "Website Development", "Website Redesign", "Custom Software Development", "CRM Development", "Business Automation", "Local SEO", "AEO", "GEO", "Landing Pages", "Digital Presence Management"],
+        "sameAs": []
+      },
+      {
+        "@type": "Service",
+        "@id": "https://wavysites.com/#service-websites",
+        "name": "Websites & Digital Experiences",
+        "provider": {"@id": "https://wavysites.com/#organization"},
+        "description": "Custom websites, redesigns, and landing pages for service businesses, ministries, local brands, and organizations that need to look credible and convert online. Mobile-first, fast, and built to rank.",
+        "areaServed": ["Southwest Florida", "Florida", "United States"]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://wavysites.com/#service-software",
+        "name": "Custom Software",
+        "provider": {"@id": "https://wavysites.com/#organization"},
+        "description": "CRMs, internal dashboards, customer portals, scheduling systems, and full applications built in React and Next.js — designed around how your team actually works, not a generic template.",
+        "areaServed": ["Southwest Florida", "Florida", "United States"]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://wavysites.com/#service-automation",
+        "name": "AI & Automation",
+        "provider": {"@id": "https://wavysites.com/#organization"},
+        "description": "Lead automation, intelligent intake, AI-assisted workflows, and internal tools that cut down repetitive work — connected directly to the systems your team already uses.",
+        "areaServed": ["Southwest Florida", "Florida", "United States"]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://wavysites.com/#service-seo",
+        "name": "Search & Growth Infrastructure",
+        "provider": {"@id": "https://wavysites.com/#organization"},
+        "description": "SEO, local SEO, AEO, and GEO — structured so search engines, maps, and AI answer engines all understand what your business does and where it serves.",
+        "areaServed": ["Southwest Florida", "Florida", "United States"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wavysites.com/"}
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -65,7 +119,7 @@
 
       <nav class="main-nav" aria-label="Primary navigation" data-nav-menu>
         <a href="#services" data-nav-link>Services</a>
-        <a href="#systems" data-nav-link>Growth System</a>
+        <a href="#software" data-nav-link>Software</a>
         <a href="#work" data-nav-link>Work</a>
         <a href="#process" data-nav-link>Process</a>
         <a href="roadmap.html">Roadmap</a>
@@ -78,31 +132,31 @@
     <section class="hero section-dark">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Websites built for real business growth</p>
-          <h1>Premium websites that look sharp, load fast, and <span class="grad-text">turn visitors into action.</span></h1>
-          <p class="hero-lede">Wavy Sites helps small businesses, ministries, creators, and local service brands launch clean, trustworthy, conversion-focused websites with SEO, forms, deployment, and post-launch growth in mind.</p>
+          <p class="eyebrow">Websites, software &amp; growth systems for real businesses</p>
+          <h1>Turn how your business runs into a <span class="grad-text">system that works online.</span></h1>
+          <p class="hero-lede">Wavy Sites designs and builds websites, custom software, CRMs, and automation for businesses that have outgrown basic tools — built around how you actually work, not a template.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">Start Your Project</a>
-            <a class="btn btn-secondary" href="#work">View Recent Work</a>
+            <a class="btn btn-secondary" href="#work">View Our Work</a>
           </div>
-          <div class="hero-proof" aria-label="Website value points">
-            <span>Mobile-first</span>
-            <span>SEO-ready</span>
-            <span>Form-ready</span>
-            <span>Client-ready</span>
+          <div class="hero-proof" aria-label="Wavy Sites capability points">
+            <span>Websites</span>
+            <span>Custom Software</span>
+            <span>Automation</span>
+            <span>SEO &amp; Growth</span>
           </div>
           <div class="hero-stats" aria-label="Wavy Sites by the numbers">
             <article>
-              <strong><span data-counter="5">5</span>+</strong>
-              <span>Live client sites</span>
+              <strong><span data-counter="7">7</span>+</strong>
+              <span>Real client builds</span>
             </article>
             <article>
-              <strong><span data-counter="8">8</span></strong>
-              <span>Phase build system</span>
+              <strong><span data-counter="2">2</span></strong>
+              <span>Custom software systems built</span>
             </article>
             <article>
-              <strong><span data-counter="100">100</span>%</strong>
-              <span>Mobile-first builds</span>
+              <strong>End-to-End</strong>
+              <span>Strategy through launch</span>
             </article>
           </div>
         </div>
@@ -113,8 +167,8 @@
           <img class="hero-logo" src="assets/logos/wavysites-mark.webp" alt="Wavy Sites interlocking wave brand mark" width="470" height="241" />
           <div class="system-card">
             <span class="system-label">Build Formula</span>
-            <strong>Strategy + Design + SEO + Forms + QA</strong>
-            <p>A full website pipeline designed to help every project leave your hands polished and ready for deployment.</p>
+            <strong>Strategy + Design + Engineering + Systems</strong>
+            <p>A build pipeline that takes a business problem all the way to a working website, application, or CRM.</p>
           </div>
         </div>
       </div>
@@ -128,20 +182,20 @@
     <section class="section trust-strip" aria-label="Core strengths">
       <div class="container trust-grid" data-stagger>
         <article class="reveal">
-          <strong>Clear Strategy</strong>
-          <span>Business goals first, design second.</span>
+          <strong>Business-First Strategy</strong>
+          <span>We start with the problem, not the platform.</span>
         </article>
         <article class="reveal">
-          <strong>Fast Builds</strong>
-          <span>Lean, clean code without bloated systems.</span>
+          <strong>Full-Stack Capability</strong>
+          <span>Websites, software, and automation from one team.</span>
         </article>
         <article class="reveal">
-          <strong>Local Visibility</strong>
+          <strong>Local &amp; AI Visibility</strong>
           <span>Structured for search, maps, and AI answers.</span>
         </article>
         <article class="reveal">
-          <strong>Lead Capture</strong>
-          <span>Working CTAs, quote forms, and thank-you flow.</span>
+          <strong>Systems That Convert</strong>
+          <span>Working CTAs, forms, and lead flow — not just good looks.</span>
         </article>
       </div>
     </section>
@@ -150,161 +204,187 @@
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow">What Wavy Sites builds</p>
-          <h2>Services that move the needle.</h2>
-          <p>Every service is shaped around clarity, trust, conversion, and a clean launch path.</p>
+          <h2>Four ways to modernize your business.</h2>
+          <p>Every project is shaped around clarity, trust, conversion, and a clean launch path — whether it's a website, software, or both.</p>
         </div>
 
         <div class="cards service-grid" data-stagger>
           <article class="card reveal">
             <span class="card-number">01</span>
-            <h3>Website Design & Development</h3>
-            <p>Custom websites for service businesses, ministries, local brands, creators, and organizations that need to look professional online.</p>
+            <h3>Websites &amp; Digital Experiences</h3>
+            <p>Custom websites, redesigns, and landing pages for service businesses, ministries, local brands, and organizations that need to look credible and convert online. Mobile-first, fast, and built to rank.</p>
           </article>
           <article class="card reveal">
             <span class="card-number">02</span>
-            <h3>Website Redesigns</h3>
-            <p>Modernize an old site, fix weak layouts, improve mobile usability, clean up messaging, and make the brand feel current.</p>
+            <h3>Custom Software</h3>
+            <p>CRMs, internal dashboards, customer portals, scheduling systems, and full applications built in React and Next.js — designed around how your team actually works, not a generic template.</p>
           </article>
           <article class="card reveal">
             <span class="card-number">03</span>
-            <h3>Landing Pages</h3>
-            <p>Focused pages for Google Ads, social campaigns, special offers, service pushes, events, donations, and quote requests.</p>
+            <h3>AI &amp; Automation</h3>
+            <p>Lead automation, intelligent intake, AI-assisted workflows, and internal tools that cut down repetitive work — connected directly to the systems your team already uses.</p>
           </article>
           <article class="card reveal">
             <span class="card-number">04</span>
-            <h3>Local SEO, AEO & GEO</h3>
-            <p>Titles, descriptions, headings, schema, FAQs, service areas, alt text, sitemap, robots file, and local trust signals.</p>
-          </article>
-          <article class="card reveal">
-            <span class="card-number">05</span>
-            <h3>Forms & Lead Flow</h3>
-            <p>Quote forms, contact forms, job inquiry forms, thank-you pages, Netlify-ready markup, and clear follow-up paths.</p>
-          </article>
-          <article class="card reveal">
-            <span class="card-number">06</span>
-            <h3>Maintenance & Growth</h3>
-            <p>Updates, content improvements, social/Google Business support, landing page optimization, and monthly website care.</p>
+            <h3>Search &amp; Growth Infrastructure</h3>
+            <p>SEO, local SEO, AEO, and GEO — structured so search engines, maps, and AI answer engines all understand what your business does and where it serves.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-muted" id="systems">
+    <section class="section section-muted" id="objective">
       <div class="container split-grid">
         <div class="reveal">
           <p class="eyebrow">More than a pretty page</p>
-          <h2>A full digital presence system.</h2>
-          <p class="large-text">A strong small-business website should answer the customer’s questions before they ask, show proof quickly, and make the next step obvious.</p>
+          <h2>You bring the objective. We build the system.</h2>
+          <p class="large-text">A messy business problem isn't a reason to wait on a website — it's the starting point. "We're losing leads." "We run everything on spreadsheets." "We need customers to book and pay online." Wavy Sites turns objectives like these into finished, working systems.</p>
           <a class="text-link" href="roadmap.html">View the full client roadmap <span aria-hidden="true">→</span></a>
         </div>
         <div class="system-list reveal delay-1" data-stagger>
           <article class="reveal">
-            <span>Understand</span>
-            <p>Hero copy that clearly explains what the business does, who it helps, and where it serves.</p>
+            <span>The Problem</span>
+            <p>Losing leads, running on spreadsheets, a site that doesn't convert, hours of manual work.</p>
           </article>
           <article class="reveal">
-            <span>Trust</span>
-            <p>Proof sections, galleries, real projects, reviews if provided, and credentials only when verified.</p>
+            <span>The Strategy</span>
+            <p>We turn a vague objective into a scoped plan: what to build, and why.</p>
           </article>
           <article class="reveal">
-            <span>Explore</span>
-            <p>Services, products, menus, galleries, models, or programs organized around how customers think.</p>
+            <span>The Build</span>
+            <p>Website, software, automation, or all three — built around how you actually work.</p>
           </article>
           <article class="reveal">
-            <span>Convert</span>
-            <p>Clear CTAs, easy forms, mobile-friendly buttons, and a thank-you path that works after launch.</p>
+            <span>The System</span>
+            <p>A working system: a CRM, a booking flow, a dashboard, a lead funnel — not just a deliverable.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="work">
+    <section class="section" id="software">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Custom software, built and shipped</p>
+          <h2>Two real businesses. Two working systems.</h2>
+          <p>This isn't a pitch — these are systems Wavy Sites designed and built, currently running the operational side of two real businesses.</p>
+        </div>
+
+        <div class="software-grid" data-stagger>
+          <article class="software-card reveal">
+            <div class="software-media">
+              <img src="assets/software/the-chef-hero.webp" alt="The Chef Catering — plated catering presentation" loading="lazy" width="1200" height="800" />
+              <img class="software-logo" src="assets/software/the-chef-logo.webp" alt="The Chef Catering logo" width="64" height="64" loading="lazy" />
+            </div>
+            <div class="software-body">
+              <span class="software-tag">Custom Software · Hospitality &amp; Catering</span>
+              <h3>The Chef Catering CRM</h3>
+              <p>A catering business needed more than a menu and a contact form — every inquiry had to become a tracked booking, quoted, scheduled, and paid, without manual re-entry. Wavy Sites built a full operational CRM behind the public site: leads, clients, events, venues, quotes, a calendar, revenue tracking, Stripe payments, and an internal AI assistant.</p>
+              <div class="software-features">
+                <span>Leads &amp; Clients</span>
+                <span>Events &amp; Venues</span>
+                <span>Quotes &amp; Calendar</span>
+                <span>Stripe Payments</span>
+                <span>AI Assistant</span>
+              </div>
+              <a class="text-link" href="#contact">See how it's built <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="software-card reveal delay-1">
+            <div class="software-media">
+              <img src="assets/software/vertical-ops-hero.webp" alt="Vertical Builders roofing project" loading="lazy" width="1200" height="800" />
+              <img class="software-logo" src="assets/software/vertical-ops-logo.webp" alt="Vertical Builders &amp; Commercial logo" width="64" height="64" loading="lazy" />
+            </div>
+            <div class="software-body">
+              <span class="software-tag">Custom Software · Construction &amp; Contracting</span>
+              <h3>Vertical Ops</h3>
+              <p>A licensed Florida general contractor needed more than a lead-gen site — subcontractor insurance certificates, estimates, and scheduling were scattered across spreadsheets and email. Wavy Sites built Vertical Ops: an internal CRM and compliance center tracking leads, projects, estimates, invoices, scheduling, and subcontractor insurance records in one place.</p>
+              <div class="software-features">
+                <span>Leads &amp; Projects</span>
+                <span>Estimates &amp; Invoices</span>
+                <span>Compliance Center</span>
+                <span>Scheduling</span>
+                <span>Activity Log</span>
+              </div>
+              <a class="text-link" href="#contact">See how it's built <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="work">
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow">Recent work</p>
           <h2>Projects built with business purpose.</h2>
-          <p>Portfolio cards are structured for trust, proof, and fast project review. Update links as each client site goes live.</p>
+          <p>A curated selection of real, deployed work. Every card links to the live site.</p>
         </div>
 
         <div class="portfolio-grid" data-stagger>
           <article class="project-card reveal">
-            <img src="assets/projects/residential-finishes.webp" alt="Residential Finishes project logo" loading="lazy" width="700" height="700" />
-            <div>
-              <span>Local service website</span>
-              <h3>Residential Finishes</h3>
-              <p>Interior finishing website with quote-focused layout, before/after proof, local visibility, and client-ready form flow.</p>
-              <a href="https://residentialfinishes.com/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <img src="assets/projects/aunttiffs.webp" alt="Aunt Tiff's Place project logo" loading="lazy" width="700" height="700" />
-            <div>
-              <span>Community website</span>
-              <h3>Aunt Tiff’s Place</h3>
-              <p>Warm outreach website with clear mission, services, donation direction, reviews, and welcoming user flow.</p>
-              <a href="https://aunttiffsplace.org/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
             <img src="assets/projects/communitypools.webp" alt="Community Pools project logo" loading="lazy" width="700" height="700" />
             <div>
-              <span>Lead generation page</span>
-              <h3>Community Pools</h3>
-              <p>Pool service presence built around resurfacing, repair needs, local service areas, and quote conversion.</p>
+              <span>Lead generation · Port Charlotte, FL</span>
+              <h3>Community Pools LLC</h3>
+              <p>Pool resurfacing and repair leads were going to competitors with a stronger web presence. Built a before/after-driven site with a real project gallery and a quote-first layout.</p>
               <a href="https://communitypoolsllc.com/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
           <article class="project-card reveal">
-            <img src="assets/projects/classique-insurance.webp" alt="Classique Insurance project logo" loading="lazy" width="700" height="700" />
+            <img src="assets/projects/residential-finishes.webp" alt="Residential Finishes project logo" loading="lazy" width="700" height="700" />
             <div>
-              <span>Professional services</span>
-              <h3>Classique Insurance</h3>
-              <p>Trust-first insurance website direction with family-centered visuals, service clarity, and polished credibility.</p>
-              <a href="https://classique.agency/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
+              <span>Interior finishing · Quote-focused</span>
+              <h3>Residential Finishes</h3>
+              <p>Needed proof of craftsmanship to close quote requests. Built a before/after gallery with two separate conversion paths — one for quote requests, one for employment applicants.</p>
+              <a href="https://residentialfinishes.com/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
           <article class="project-card reveal">
             <img src="assets/projects/adamsstriping.webp" alt="Adams Striping project logo" loading="lazy" width="700" height="700" />
             <div>
-              <span>Trade service website</span>
+              <span>Pavement striping &amp; sealcoating</span>
               <h3>Adams Striping</h3>
-              <p>Bold service layout with project proof, local SEO structure, and practical conversion improvements.</p>
+              <p>Built a service site with dedicated pages for crack sealing and sealcoating, plus a real before/after project gallery, to make bid-stage credibility immediate.</p>
               <a href="https://adamsstriping.com/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
             </div>
           </article>
 
-          <article class="project-card project-card-empty reveal">
-            <div class="project-placeholder" aria-hidden="true">+</div>
+          <article class="project-card reveal">
+            <img src="assets/projects/veteransdrywall.webp" alt="Veterans Drywall project logo" loading="lazy" width="700" height="700" />
             <div>
-              <span>Next launch</span>
-              <h3>Your Project Here</h3>
-              <p>Every new build follows the Wavy Sites roadmap: strategy, design, forms, SEO, deployment, QA, and handoff.</p>
-              <a href="#contact">Start a project <span aria-hidden="true">→</span></a>
+              <span>Drywall contractor · North Port, FL</span>
+              <h3>Veterans Drywall</h3>
+              <p>Built with a full image-usage system — hero, social preview, mobile, and gallery variants each defined — so the site stays visually consistent across every placement.</p>
+              <a href="https://veteransdrywall.net/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">→</span></a>
             </div>
           </article>
         </div>
+
+        <p class="portfolio-more reveal">
+          <a class="text-link" href="work.html">View All Work <span aria-hidden="true">→</span></a>
+        </p>
       </div>
     </section>
 
-    <section class="section section-dark cta-band">
-      <div class="container cta-grid">
+    <section class="section blueprint-section" id="blueprint">
+      <div class="container split-grid">
         <div class="reveal">
-          <p class="eyebrow">Maximum-capacity workflow</p>
-          <h2>Built from one repeatable system.</h2>
-          <p>The same roadmap used for Wavy Sites client builds is included in this package so every AI, developer, or teammate can follow the same standard.</p>
+          <p class="eyebrow">A strategic service, not just an audit</p>
+          <h2>See exactly where you stand against the competition — and what to fix first.</h2>
+          <p class="large-text">The Competitive Growth Blueprint evaluates your website and digital presence against roughly five local competitors: structure, service pages, calls to action, conversion flow, trust signals, local SEO, content gaps, and AEO/GEO readiness — how visible you are to AI answer engines, not just search results.</p>
+          <a class="btn btn-primary" href="#contact">Get a Growth Blueprint</a>
         </div>
-        <div class="cta-panel reveal delay-1">
-          <strong>Every project should ship with:</strong>
-          <ul>
-            <li>Business strategy and customer journey</li>
-            <li>Premium responsive design</li>
-            <li>Working forms and thank-you flow</li>
-            <li>SEO, AEO, GEO, metadata, schema</li>
-            <li>Deployment QA and client handoff</li>
+        <div class="card blueprint-panel reveal delay-1">
+          <h3>What you get</h3>
+          <ul class="check-list">
+            <li>A competitor-by-competitor comparison</li>
+            <li>A recommended sitemap and priority service pages</li>
+            <li>Conversion and CTA recommendations</li>
+            <li>A search and content strategy, prioritized by impact</li>
           </ul>
         </div>
       </div>
@@ -315,34 +395,91 @@
         <div class="section-heading reveal">
           <p class="eyebrow">How it works</p>
           <h2>Simple process. Real structure.</h2>
-          <p>A focused build path keeps the project moving without losing quality.</p>
+          <p>A focused build path keeps every project moving without losing quality — whether it's a website or a full system.</p>
         </div>
 
         <div class="timeline" data-stagger>
           <article class="timeline-item reveal">
             <span>01</span>
             <h3>Discover</h3>
-            <p>Collect the business goal, services, service area, customer type, assets, competitors, and conversion target.</p>
+            <p>The business goal, the customer, the workflow, the competitors, and the bottleneck.</p>
           </article>
           <article class="timeline-item reveal">
             <span>02</span>
-            <h3>Plan</h3>
-            <p>Map the homepage journey, required pages, proof sections, CTA hierarchy, SEO targets, and launch requirements.</p>
+            <h3>Architect</h3>
+            <p>Decide what actually needs to get built: a website, custom software, automation, or some combination.</p>
           </article>
           <article class="timeline-item reveal">
             <span>03</span>
-            <h3>Build</h3>
-            <p>Design and develop the site with mobile-first structure, organized assets, strong copy, and reusable patterns.</p>
+            <h3>Design</h3>
+            <p>UX, content hierarchy, and visual system for what's being built.</p>
           </article>
           <article class="timeline-item reveal">
             <span>04</span>
-            <h3>Optimize</h3>
-            <p>Add metadata, schema, sitemap, robots, image alt text, service-area language, performance improvements, and accessibility polish.</p>
+            <h3>Build</h3>
+            <p>Development, in the simplest stack that fully supports the job.</p>
           </article>
           <article class="timeline-item reveal">
             <span>05</span>
             <h3>Launch</h3>
-            <p>Deploy to Netlify or Vercel, test live forms, check mobile, verify links, and hand off a client-ready package.</p>
+            <p>Deploy, test live forms and integrations, verify on real devices, hand off.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span>06</span>
+            <h3>Grow</h3>
+            <p>Ongoing improvement based on performance, feedback, and changing needs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark cta-band" id="technology">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">Built on a modern, proven stack</p>
+          <h2>The tools behind the systems.</h2>
+          <div class="tech-row" aria-label="Technologies Wavy Sites builds with">
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">Next.js</span>
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">Supabase</span>
+            <span class="tech-pill">Stripe</span>
+            <span class="tech-pill">Netlify</span>
+            <span class="tech-pill">Vercel</span>
+            <span class="tech-pill">AI Integrations</span>
+          </div>
+          <p class="tech-note">The right tool for the job — static and fast for a lean site, full-stack when the project needs real software.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Why businesses choose Wavy Sites</p>
+          <h2>Strategy, design, and engineering under one roof.</h2>
+        </div>
+
+        <div class="cards why-grid" data-stagger>
+          <article class="card reveal">
+            <span class="card-number">01</span>
+            <h3>Business-first, not platform-first</h3>
+            <p>Every project starts with the problem, not a template.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-number">02</span>
+            <h3>Custom software, not just websites</h3>
+            <p>The Chef CRM and Vertical Ops are real, working systems — not mockups.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-number">03</span>
+            <h3>One connected build process</h3>
+            <p>Strategy, design, and engineering stay coordinated from discovery through launch, so the project doesn't get lost between disconnected teams.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-number">04</span>
+            <h3>Direct communication</h3>
+            <p>You work with the person building it, not an account manager relaying messages.</p>
           </article>
         </div>
       </div>
@@ -352,36 +489,50 @@
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow">Ways to work</p>
-          <h2>Choose the level of support that fits the client.</h2>
+          <h2>Choose the scope that fits where your business is.</h2>
         </div>
         <div class="package-grid" data-stagger>
           <article class="package-card reveal">
-            <span>Package 01</span>
-            <h3>Website-Only Build</h3>
-            <p>For clients who need a custom site delivered, deployed, and ready to manage.</p>
+            <span>Launch</span>
+            <h3>A focused, professional presence.</h3>
+            <p>For businesses that need a homepage or multi-section site, done right.</p>
             <ul>
-              <li>Homepage or multi-section build</li>
+              <li>Homepage or multi-section site</li>
               <li>Mobile-first design</li>
               <li>Basic SEO setup</li>
               <li>Working contact or quote form</li>
               <li>Deployment guidance</li>
             </ul>
-            <a class="btn btn-secondary" href="#contact">Request Quote</a>
+            <a class="btn btn-secondary" href="#contact">Start Small</a>
           </article>
           <article class="package-card featured reveal">
-            <span>Most Complete</span>
-            <h3>Full Digital Presence</h3>
-            <p>For clients who want the website plus growth strategy and post-launch support.</p>
+            <span>Most Popular</span>
+            <h3>Growth</h3>
+            <p>For businesses that need a larger site, search strategy, and real lead systems.</p>
             <ul>
-              <li>Everything in Website-Only</li>
-              <li>SEO/AEO/GEO improvements</li>
-              <li>Google Business and social direction</li>
-              <li>Landing page/ad readiness</li>
-              <li>Maintenance and content options</li>
+              <li>Everything in Launch</li>
+              <li>SEO / AEO / GEO improvements</li>
+              <li>Google Business and local visibility support</li>
+              <li>Landing page and ad-campaign readiness</li>
+              <li>Lead capture and follow-up systems</li>
             </ul>
-            <a class="btn btn-primary" href="#contact">Build My System</a>
+            <a class="btn btn-primary" href="#contact">Build My Growth System</a>
+          </article>
+          <article class="package-card reveal">
+            <span>Custom Scope</span>
+            <h3>Custom Systems</h3>
+            <p>For CRMs, dashboards, portals, automation, and AI integrations.</p>
+            <ul>
+              <li>Everything in Growth</li>
+              <li>Custom software design and development</li>
+              <li>CRM, portal, or dashboard build</li>
+              <li>AI-assisted workflows and automation</li>
+              <li>Ongoing system maintenance options</li>
+            </ul>
+            <a class="btn btn-secondary" href="#contact">Request a Project Estimate</a>
           </article>
         </div>
+        <p class="tech-note" style="margin-top:24px;">Custom scope — every project is estimated after a discovery call. Wavy Sites doesn't publish fixed prices, since a website and a full CRM build are very different projects.</p>
       </div>
     </section>
 
@@ -413,6 +564,30 @@
             <summary>Can the site connect to Netlify or Vercel?</summary>
             <p>Yes. Static sites can be deployed on Netlify, while React/Vite or Next.js projects can be deployed on Netlify or Vercel depending on the project needs.</p>
           </details>
+          <details>
+            <summary>Do you build custom business software, not just websites?</summary>
+            <p>Yes. The Chef Catering CRM and Vertical Ops are both real, working systems Wavy Sites designed and built — not templates.</p>
+          </details>
+          <details>
+            <summary>Can you build a CRM for my company?</summary>
+            <p>Yes, scoped around how your business actually operates — leads, clients, projects, scheduling, and whatever else your workflow needs.</p>
+          </details>
+          <details>
+            <summary>Can you automate parts of my business?</summary>
+            <p>Yes — lead intake, follow-ups, internal workflows, and AI-assisted tools that connect to systems you already use.</p>
+          </details>
+          <details>
+            <summary>Do I own my website or custom software after launch?</summary>
+            <p>Ownership, source-code access, hosting responsibilities, and any third-party licenses are defined clearly in the project agreement. Custom work is structured so clients understand exactly what they receive at handoff.</p>
+          </details>
+          <details>
+            <summary>Can you maintain the system after launch?</summary>
+            <p>Yes. Ongoing maintenance, support, and improvement plans are available after launch.</p>
+          </details>
+          <details>
+            <summary>How much does a custom website or software project cost?</summary>
+            <p>It depends on scope, so Wavy Sites doesn't publish fixed prices — every project gets a real estimate after a discovery call.</p>
+          </details>
         </div>
       </div>
 
@@ -421,11 +596,17 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type":"Question","name":"What kind of businesses does Wavy Sites help?","acceptedAnswer":{"@type":"Answer","text":"Wavy Sites helps small businesses, local service companies, ministries, community organizations, creators, restaurants, consultants, and brands that need a professional online presence."}},
+          {"@type":"Question","name":"What kind of businesses does Wavy Sites help?","acceptedAnswer":{"@type":"Answer","text":"Wavy Sites is built for small businesses, local service companies, ministries, community organizations, creators, restaurants, consultants, and brands that need a professional online presence."}},
           {"@type":"Question","name":"Can you redesign an existing website?","acceptedAnswer":{"@type":"Answer","text":"Yes. The process starts by inspecting what already works, identifying what is broken or weak, and improving the site without removing important content or approved design direction."}},
-          {"@type":"Question","name":"Do Wavy Sites builds include SEO?","acceptedAnswer":{"@type":"Answer","text":"Core SEO includes page titles, meta descriptions, heading structure, alt text, internal links, schema when appropriate, sitemap, robots file, and local/service-area language."}},
-          {"@type":"Question","name":"Will the website work on phones?","acceptedAnswer":{"@type":"Answer","text":"Yes. Mobile layout is treated as a launch requirement with readable text, tap-friendly buttons, clean stacked cards, no horizontal overflow, and easy-to-use forms."}},
-          {"@type":"Question","name":"Can the site connect to Netlify or Vercel?","acceptedAnswer":{"@type":"Answer","text":"Yes. Static sites can be deployed on Netlify, while React/Vite or Next.js projects can be deployed on Netlify or Vercel depending on the project needs."}}
+          {"@type":"Question","name":"Do Wavy Sites builds include SEO?","acceptedAnswer":{"@type":"Answer","text":"Yes. Core SEO includes page titles, meta descriptions, heading structure, alt text, internal links, schema when appropriate, sitemap, robots file, and local/service-area language."}},
+          {"@type":"Question","name":"Will the website work on phones?","acceptedAnswer":{"@type":"Answer","text":"Yes. Mobile layout is treated as a launch requirement, including readable text, tap-friendly buttons, clean stacked cards, no horizontal overflow, and easy-to-use forms."}},
+          {"@type":"Question","name":"Can the site connect to Netlify or Vercel?","acceptedAnswer":{"@type":"Answer","text":"Yes. Static sites can be deployed on Netlify, while React/Vite or Next.js projects can be deployed on Netlify or Vercel depending on the project needs."}},
+          {"@type":"Question","name":"Do you build custom business software, not just websites?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Chef Catering CRM and Vertical Ops are both real, working systems Wavy Sites designed and built — not templates."}},
+          {"@type":"Question","name":"Can you build a CRM for my company?","acceptedAnswer":{"@type":"Answer","text":"Yes, scoped around how your business actually operates — leads, clients, projects, scheduling, and whatever else your workflow needs."}},
+          {"@type":"Question","name":"Can you automate parts of my business?","acceptedAnswer":{"@type":"Answer","text":"Yes — lead intake, follow-ups, internal workflows, and AI-assisted tools that connect to systems you already use."}},
+          {"@type":"Question","name":"Do I own my website or custom software after launch?","acceptedAnswer":{"@type":"Answer","text":"Ownership, source-code access, hosting responsibilities, and any third-party licenses are defined clearly in the project agreement. Custom work is structured so clients understand exactly what they receive at handoff."}},
+          {"@type":"Question","name":"Can you maintain the system after launch?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ongoing maintenance, support, and improvement plans are available after launch."}},
+          {"@type":"Question","name":"How much does a custom website or software project cost?","acceptedAnswer":{"@type":"Answer","text":"It depends on scope, so Wavy Sites doesn't publish fixed prices — every project gets a real estimate after a discovery call."}}
         ]
       }
       </script>
@@ -435,11 +616,11 @@
       <div class="container contact-grid">
         <div class="contact-copy reveal">
           <p class="eyebrow">Start your project</p>
-          <h2>Tell Wavy Sites what you’re building.</h2>
-          <p class="large-text">Send the project goal, business type, current website if you have one, and what you need the site to do. The best projects start with clear direction.</p>
+          <h2>Tell Wavy Sites what you're trying to build.</h2>
+          <p class="large-text">Send the objective, the business problem, and what you need the end result to do — a website, software, automation, or all three. The best projects start with clear direction.</p>
           <div class="contact-notes">
-            <article><strong>Best for</strong><span>New builds, redesigns, local-service sites, landing pages, ministry sites, portfolios, and small business systems.</span></article>
-            <article><strong>Helpful assets</strong><span>Logo, photos, services, service areas, social links, reviews, and competitor examples.</span></article>
+            <article><strong>Best for</strong><span>New builds, redesigns, custom software and CRMs, automation, local-service sites, landing pages, ministry sites, and small business systems.</span></article>
+            <article><strong>Helpful assets</strong><span>Logo, photos, current site or software (if any), services, service areas, and any workflow you want automated.</span></article>
           </div>
         </div>
 
@@ -469,15 +650,42 @@
               <input id="business" name="business" type="text" />
             </div>
             <div>
-              <label for="service">Project Type</label>
+              <label for="service">Service Needed</label>
               <select id="service" name="service" required>
                 <option value="">Select one</option>
                 <option>New website</option>
                 <option>Website redesign</option>
-                <option>Landing page</option>
+                <option>Custom software / CRM</option>
+                <option>AI &amp; automation</option>
                 <option>SEO / local visibility</option>
+                <option>Competitive Growth Blueprint</option>
                 <option>Maintenance / updates</option>
                 <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row two-col">
+            <div>
+              <label for="budget">Budget Range</label>
+              <select id="budget" name="budget">
+                <option value="">Select one</option>
+                <option>Under $1,500</option>
+                <option>$1,500 – $3,000</option>
+                <option>$3,000 – $7,500</option>
+                <option>$7,500 – $15,000</option>
+                <option>$15,000+</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div>
+              <label for="timeline">Timeline</label>
+              <select id="timeline" name="timeline">
+                <option value="">Select one</option>
+                <option>ASAP</option>
+                <option>Within 2–4 weeks</option>
+                <option>1–2 months</option>
+                <option>2–3 months</option>
+                <option>Flexible / planning ahead</option>
               </select>
             </div>
           </div>
@@ -486,7 +694,7 @@
             <input id="website" name="website" type="url" placeholder="https://" />
           </div>
           <div class="form-row">
-            <label for="message">What do you need the website to accomplish?</label>
+            <label for="message">What are you trying to build?</label>
             <textarea id="message" name="message" rows="6" required></textarea>
           </div>
           <button class="btn btn-primary form-button" type="submit" data-form-button>Send Project Request <span aria-hidden="true">→</span></button>
@@ -502,11 +710,12 @@
         <a class="footer-brand" href="#top" aria-label="Wavy Sites home">
           <img class="footer-wordmark" src="assets/logos/wavysites-wordmark-dark.webp" alt="wavysites.com — surfing the web in style" width="280" height="63" />
         </a>
-        <p>Founder-led website design, development, and digital presence support for brands that need to look credible and convert better online.</p>
+        <p>Founder-led websites, custom software, and digital systems for brands that need to look credible — and run better — online.</p>
       </div>
       <div>
         <h2 class="footer-heading">Navigate</h2>
         <a href="#services">Services</a>
+        <a href="#software">Software</a>
         <a href="#work">Work</a>
         <a href="#process">Process</a>
         <a href="roadmap.html">Roadmap</a>
@@ -514,8 +723,8 @@
       <div>
         <h2 class="footer-heading">Core Build Standards</h2>
         <span>Responsive design</span>
+        <span>Custom software &amp; CRMs</span>
         <span>SEO/AEO/GEO</span>
-        <span>Working forms</span>
         <span>Deployment QA</span>
       </div>
     </div>

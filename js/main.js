@@ -169,18 +169,41 @@
     sectionMap.forEach((_link, section) => navObserver.observe(section));
   }
 
-  /* ---------- Sticky mobile CTA: hide near the form ---------- */
+  /* ---------- Sticky mobile CTA: hide near the hero and near the form ---------- */
   const mobileCta = document.querySelector('[data-mobile-cta]');
   const contactSection = document.querySelector('#contact');
+  const heroSection = document.querySelector('.hero');
 
-  if (mobileCta && contactSection && 'IntersectionObserver' in window) {
-    const ctaObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        mobileCta.classList.toggle('is-hidden', entry.isIntersecting);
-      });
-    }, { threshold: 0.08 });
+  if (mobileCta && 'IntersectionObserver' in window) {
+    const ctaHideState = { hero: !!heroSection, contact: false };
 
-    ctaObserver.observe(contactSection);
+    const updateCtaVisibility = () => {
+      mobileCta.classList.toggle('is-hidden', ctaHideState.hero || ctaHideState.contact);
+    };
+
+    if (heroSection) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          ctaHideState.hero = entry.isIntersecting;
+          updateCtaVisibility();
+        });
+      }, { threshold: 0.08 });
+
+      heroObserver.observe(heroSection);
+    }
+
+    if (contactSection) {
+      const ctaObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          ctaHideState.contact = entry.isIntersecting;
+          updateCtaVisibility();
+        });
+      }, { threshold: 0.08 });
+
+      ctaObserver.observe(contactSection);
+    }
+
+    updateCtaVisibility();
   }
 
   /* ---------- Form submit feedback ---------- */
