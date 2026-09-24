@@ -26,7 +26,7 @@
      to live later is swapping this one string — nothing else in the
      funnel needs to change.
      ===================================================================== */
-  const STRIPE_TEST_DEPOSIT_PAYMENT_LINK = '';
+  const STRIPE_TEST_DEPOSIT_PAYMENT_LINK = 'https://buy.stripe.com/test_28EcN6gtc9czcj5cQ7fIs00';
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
