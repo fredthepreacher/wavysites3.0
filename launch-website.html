@@ -65,7 +65,7 @@
           {"@type":"Question","name":"What do you need from me?","acceptedAnswer":{"@type":"Answer","text":"Your logo, photos, services or menu, business information, and any examples you like. The build starts once these are in hand."}},
           {"@type":"Question","name":"How does payment work?","acceptedAnswer":{"@type":"Answer","text":"$999 total. A $499 deposit reserves your project today; the remaining $500 is due before final launch. No hidden fees and no preselected add-ons."}},
           {"@type":"Question","name":"Can I request changes?","acceptedAnswer":{"@type":"Answer","text":"Yes — one primary revision round is included after your first draft. Larger or open-ended change requests are handled as a custom add-on."}},
-          {"@type":"Question","name":"What if I need an online store?","acceptedAnswer":{"@type":"Answer","text":"Ecommerce isn't part of the $999 package. It's a great fit for a custom project — start one from this page's fit-check or the main contact form."}},
+          {"@type":"Question","name":"What if I need an online store?","acceptedAnswer":{"@type":"Answer","text":"Ecommerce isn't part of the $999 package. It's a great fit for a custom project — choose Online store / ecommerce in this page's scope check to get a custom estimate, or use the main contact form."}},
           {"@type":"Question","name":"What if I need a CRM or customer portal?","acceptedAnswer":{"@type":"Answer","text":"Custom software, CRMs, and customer portals are scoped separately as a custom project — Wavy Sites builds these too, just not inside the fixed $999 package."}},
           {"@type":"Question","name":"Do I need hosting or a domain already?","acceptedAnswer":{"@type":"Answer","text":"If you already have a domain, we'll connect it at launch. If not, we'll walk you through getting one during onboarding."}},
           {"@type":"Question","name":"Is SEO included?","acceptedAnswer":{"@type":"Answer","text":"Yes — page titles, meta descriptions, heading structure, alt text, sitemap, and robots file are included as a baseline foundation."}},
@@ -362,8 +362,8 @@
       <div class="container contact-grid">
         <div class="contact-copy reveal">
           <p class="eyebrow">Start your website</p>
-          <h2>Let's confirm it's a fit, then get you in the build queue.</h2>
-          <p class="large-text">A 30-second fit check, then a secure $499 deposit to reserve your project. No account required, no surprises — the full $999 price is shown before you pay anything.</p>
+          <h2>One quick question, then secure checkout.</h2>
+          <p class="large-text">Tell us whether your project needs any advanced features. If it doesn't, you'll see the full $999 price and can reserve your build with a $499 deposit — no forms to fill out first, no account required.</p>
           <div class="contact-notes">
             <article><strong>Best for</strong><span>Contractors, home-service businesses, consultants, local businesses, restaurants, and startups that need a straightforward, professional website.</span></article>
             <article><strong>How payment works</strong><span>$999 total. $499 reserves your project today; the remaining $500 is due before final launch — invoiced separately, not charged automatically.</span></article>
@@ -373,115 +373,74 @@
 
         <div class="start-panel reveal delay-1">
           <div class="step-indicator" aria-label="Purchase steps">
-            <span data-step="1" class="is-active">Step 1 — Quick fit check</span>
+            <span data-step="1" class="is-active">Step 1 — Quick scope check</span>
             <span data-step="2">Step 2 — Secure checkout</span>
           </div>
 
-          <form class="contact-form" name="launch-fit-check" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
-            <input type="hidden" name="form-name" value="launch-fit-check" />
-            <input type="hidden" name="reference_id" />
-            <p class="hidden-field">
-              <label>Do not fill this out if you are human: <input name="bot-field" /></label>
-            </p>
-
-            <div class="form-row two-col">
-              <div>
-                <label for="fit-name">Name</label>
-                <input id="fit-name" name="name" type="text" autocomplete="name" required />
+          <div class="contact-form scope-check" data-scope-check>
+            <fieldset class="scope-fieldset">
+              <legend class="scope-question">Does your project need any of these?</legend>
+              <p class="scope-routing-note" id="scope-routing-note"><strong>How this works:</strong> picking any of the first six sends you to a custom estimate instead of the $999 package — those features need their own scope and quote. If you need none of them, choose <strong>None of these</strong> to see your order summary and go straight to checkout.</p>
+              <div class="fit-options" aria-describedby="scope-routing-note">
+                <label><input type="checkbox" data-fit="online-store" /> Online store / ecommerce</label>
+                <label><input type="checkbox" data-fit="crm" /> Custom CRM or software</label>
+                <label><input type="checkbox" data-fit="portal" /> Customer login / portal</label>
+                <label><input type="checkbox" data-fit="booking" /> Advanced booking</label>
+                <label><input type="checkbox" data-fit="automation" /> Custom automation</label>
+                <label><input type="checkbox" data-fit="large-site" /> More than 5 standard pages</label>
+                <label class="is-none-option"><input type="checkbox" data-fit="none" /> None of these</label>
               </div>
-              <div>
-                <label for="fit-business">Business name</label>
-                <input id="fit-business" name="business" type="text" autocomplete="organization" required />
-              </div>
-            </div>
-            <div class="form-row two-col">
-              <div>
-                <label for="fit-email">Email</label>
-                <input id="fit-email" name="email" type="email" autocomplete="email" required />
-              </div>
-              <div>
-                <label for="fit-website">Existing website (if any)</label>
-                <input id="fit-website" name="existing_website" type="url" placeholder="https://" />
-              </div>
-            </div>
-            <div class="form-row">
-              <label for="fit-type">Business type</label>
-              <select id="fit-type" name="business_type" required>
-                <option value="">Select one</option>
-                <option>Contractor / Home Services</option>
-                <option>Restaurant / Food Service</option>
-                <option>Consultant / Professional Services</option>
-                <option>Local Retail / Shop</option>
-                <option>Nonprofit / Ministry</option>
-                <option>Startup / New Business</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="fit-need">What does your business need the website to do?</label>
-              <textarea id="fit-need" name="need" rows="4" required></textarea>
-            </div>
-
-            <div class="form-row">
-              <label>Does your project need any of these?</label>
-              <div class="fit-options">
-                <label><input type="checkbox" data-fit="online-store" name="fit_online_store" /> Online store</label>
-                <label><input type="checkbox" data-fit="crm" name="fit_crm" /> Custom CRM / software</label>
-                <label><input type="checkbox" data-fit="portal" name="fit_portal" /> Customer login / portal</label>
-                <label><input type="checkbox" data-fit="booking" name="fit_booking" /> Advanced booking</label>
-                <label><input type="checkbox" data-fit="automation" name="fit_automation" /> Custom automation</label>
-                <label><input type="checkbox" data-fit="large-site" name="fit_large_site" /> Large site / many pages</label>
-                <label class="is-none-option"><input type="checkbox" data-fit="none" name="fit_none" /> None of these</label>
-              </div>
-            </div>
-
-            <button class="btn btn-primary form-button" type="submit" data-form-button>Check My Fit <span aria-hidden="true">→</span></button>
-          </form>
-
-          <div class="fit-result" data-state="pass" data-fit-result="pass">
-            <h3><span class="fit-check-mark" aria-hidden="true"></span> Looks like a fit.</h3>
-            <p>A Website Launch Package covers exactly what you described. Here's your order summary.</p>
-
-            <div class="package-card featured order-summary">
-              <span>Website Launch Package</span>
-              <h3>$999 total project price</h3>
-              <ul class="check-list">
-                <li>Custom design, up to 5 pages (or equivalent approved scope)</li>
-                <li>Mobile-responsive build</li>
-                <li>Contact / quote form</li>
-                <li>SEO foundation</li>
-                <li>Deployment &amp; launch QA</li>
-                <li>One revision round</li>
-                <li>Typical launch window: 7–14 business days after required assets are received</li>
-              </ul>
-              <div class="order-line">
-                <span>Total project price</span>
-                <span>$999</span>
-              </div>
-              <div class="order-line">
-                <span>Due before final launch</span>
-                <span>$500</span>
-              </div>
-              <div class="order-total">
-                <span>Charged today (deposit)</span>
-                <span>$499</span>
-              </div>
-              <a class="btn btn-primary" href="#" data-checkout-button data-checkout>Continue to Secure Checkout — $499 Deposit <span aria-hidden="true">→</span></a>
-              <span class="test-mode-badge">Test mode — no live charges</span>
-              <div class="checkout-trust">
-                <span>Secured by Stripe</span>
-                <span>No account required</span>
-                <span>No hidden fees</span>
-                <span>Direct support if anything looks off</span>
-              </div>
-              <p class="checkout-notice" data-checkout-notice>Checkout isn't connected yet — this button will open Stripe's secure test-mode checkout for the $499 deposit once the test Payment Link is added behind the scenes. No payment can be taken until then.</p>
-            </div>
+            </fieldset>
           </div>
 
-          <div class="fit-result" data-state="custom" data-fit-result="custom">
-            <h3>This sounds like a custom build.</h3>
-            <p>Based on what you selected, this project needs more than the Launch Website package covers — a good thing, since it means we'll scope it properly instead of trimming it down to fit.</p>
-            <a class="btn btn-secondary" href="index.html#contact">Get a Custom Estimate <span aria-hidden="true">→</span></a>
+          <p class="scope-status" data-scope-status role="status" aria-live="polite"></p>
+          <div class="scope-results">
+            <div class="fit-result" data-state="pass" data-fit-result="pass">
+              <h3><span class="fit-check-mark" aria-hidden="true"></span> The $999 package covers it.</h3>
+              <p>Here's your order summary. Your business details come after checkout, in one short intake.</p>
+
+              <div class="package-card featured order-summary">
+                <span>Website Launch Package</span>
+                <h3>$999 total project price</h3>
+                <ul class="check-list">
+                  <li>Custom design, up to 5 pages (or equivalent approved scope)</li>
+                  <li>Mobile-responsive build</li>
+                  <li>Contact / quote form</li>
+                  <li>SEO foundation</li>
+                  <li>Deployment &amp; launch QA</li>
+                  <li>One revision round</li>
+                  <li>Typical launch window: 7–14 business days after required assets are received</li>
+                </ul>
+                <div class="order-line">
+                  <span>Total project price</span>
+                  <span>$999</span>
+                </div>
+                <div class="order-line">
+                  <span>Due before final launch</span>
+                  <span>$500</span>
+                </div>
+                <div class="order-total">
+                  <span>Charged today (deposit)</span>
+                  <span>$499</span>
+                </div>
+                <a class="btn btn-primary" href="#" data-checkout-button data-checkout>Continue to Secure Checkout — $499 Deposit <span aria-hidden="true">→</span></a>
+                <span class="test-mode-badge">Test mode — no live charges</span>
+                <div class="checkout-trust">
+                  <span>Secured by Stripe</span>
+                  <span>No account required</span>
+                  <span>No hidden fees</span>
+                  <span>Direct support if anything looks off</span>
+                </div>
+                <p class="checkout-notice" data-checkout-notice>Checkout isn't connected yet — this button will open Stripe's secure test-mode checkout for the $499 deposit once the test Payment Link is added behind the scenes. No payment can be taken until then.</p>
+              </div>
+            </div>
+
+            <div class="fit-result" data-state="custom" data-fit-result="custom">
+              <h3>This sounds like a custom build.</h3>
+              <p>The features you picked deserve their own scope, so we'll quote your project properly instead of squeezing it into the $999 package. Tell us a little about it and Wavy Sites will follow up with an estimate.</p>
+              <a class="btn btn-primary" href="index.html#contact" data-custom-estimate>Get a Custom Estimate <span aria-hidden="true">→</span></a>
+              <p class="scope-switch-note">Only need a standard site after all? Uncheck those options and choose <strong>None of these</strong>.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -521,7 +480,7 @@
           </details>
           <details>
             <summary>What if I need an online store?</summary>
-            <p>Ecommerce isn't part of the $999 package. It's a great fit for a custom project — start one from this page's fit-check or the main contact form.</p>
+            <p>Ecommerce isn't part of the $999 package. It's a great fit for a custom project — choose Online store / ecommerce in this page's scope check to get a custom estimate, or use the main contact form.</p>
           </details>
           <details>
             <summary>What if I need a CRM or customer portal?</summary>

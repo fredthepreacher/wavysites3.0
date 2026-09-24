@@ -1,5 +1,5 @@
 /* Wavy Sites — Website Launch Package ($999 total / $499 deposit) funnel
-   Covers launch-website.html (fit-check + checkout), launch-success.html,
+   Covers launch-website.html (scope check + checkout), launch-success.html,
    and launch-intake.html — each block below no-ops on the other pages.
    Dependency-free, self-contained. Deliberately kept separate from
    js/main.js so the existing homepage script is never touched.
@@ -15,11 +15,10 @@
      remaining $500 is invoiced separately before launch (Version 1;
      see the Phase 10A/10C notes on a second Payment Link later).
 
-     TODO (Fred): paste the Stripe TEST MODE Payment Link URL for
-     "Wavy Sites — Website Launch Package Deposit" ($499) below before
-     QA. Until this is filled in, the checkout button shows an honest
-     "not connected yet" notice instead of a dead link — no payment
-     can be taken either way.
+     Stripe TEST MODE Payment Link for "Wavy Sites — Website Launch
+     Package Deposit" ($499). If this is ever emptied, the checkout
+     button shows an honest "not connected yet" notice instead of a
+     dead link.
 
      NEVER paste a LIVE Payment Link here until you have explicitly
      approved switching Phase 10 to live payments. Flipping from test
@@ -212,52 +211,27 @@
   });
 
   /* =====================================================================
-     FIT CHECK — qualification step
+     SCOPE CHECK — one question, no personal details
+     -------------------------------------------------------------------
+     "Does your project need any of these?" Picking "None of these"
+     reveals the order summary + checkout; picking any advanced feature
+     routes to a custom estimate instead. Nothing is submitted or stored
+     here — contact and business details are collected by Stripe
+     (email) and the post-purchase intake form, never twice.
      ===================================================================== */
-  const fitForm = document.querySelector('form[name="launch-fit-check"]');
-  const fitButton = fitForm ? fitForm.querySelector('[data-form-button]') : null;
-  const fitCheckboxes = fitForm ? Array.from(fitForm.querySelectorAll('input[type="checkbox"][data-fit]')) : [];
-  const noneCheckbox = fitForm ? fitForm.querySelector('input[type="checkbox"][data-fit="none"]') : null;
+  const scopeRoot = document.querySelector('[data-scope-check]');
+  const fitCheckboxes = scopeRoot ? Array.from(scopeRoot.querySelectorAll('input[type="checkbox"][data-fit]')) : [];
+  const noneCheckbox = scopeRoot ? scopeRoot.querySelector('input[type="checkbox"][data-fit="none"]') : null;
+  const complexCheckboxes = fitCheckboxes.filter((box) => box !== noneCheckbox);
   const passResult = document.querySelector('[data-fit-result="pass"]');
   const customResult = document.querySelector('[data-fit-result="custom"]');
+  const scopeStatus = document.querySelector('[data-scope-status]');
   const stepChips = document.querySelectorAll('[data-step]');
-  const referenceField = fitForm ? fitForm.querySelector('[name="reference_id"]') : null;
-  const emailField = fitForm ? fitForm.querySelector('#fit-email') : null;
 
-  /* A short reference id ties a fit-check submission to the Stripe
-     order (via client_reference_id) so a paid order can be matched
-     back to its fit-check answers in the Netlify + Stripe dashboards
-     without any backend — see the Phase 10A architecture doc. */
+  /* A short reference id travels to Stripe as client_reference_id and on
+     to the intake page, so a paid order can be matched to its intake
+     without any backend. It identifies the order, not the person. */
   const referenceId = `LW-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`.toUpperCase();
-  if (referenceField) referenceField.value = referenceId;
-
-  let fitCheckStarted = false;
-  if (fitForm) {
-    fitForm.addEventListener('focusin', () => {
-      if (!fitCheckStarted) {
-        fitCheckStarted = true;
-        pushEvent('fit_check_start');
-      }
-    }, { once: false });
-  }
-
-  /* Mutually exclusive: "None of these" clears the complex-need boxes
-     and vice versa, so the selection always stays meaningful. */
-  const complexCheckboxes = fitCheckboxes.filter((box) => box !== noneCheckbox);
-
-  if (noneCheckbox) {
-    noneCheckbox.addEventListener('change', () => {
-      if (noneCheckbox.checked) {
-        complexCheckboxes.forEach((box) => { box.checked = false; });
-      }
-    });
-  }
-
-  complexCheckboxes.forEach((box) => {
-    box.addEventListener('change', () => {
-      if (box.checked && noneCheckbox) noneCheckbox.checked = false;
-    });
-  });
 
   const setStep = (stepNumber) => {
     stepChips.forEach((chip) => {
@@ -267,83 +241,99 @@
     });
   };
 
-  const revealResult = (state) => {
-    [passResult, customResult].forEach((el) => {
-      if (el) el.classList.remove('is-visible');
-    });
-    const target = state === 'pass' ? passResult : customResult;
-    if (target) {
-      target.classList.add('is-visible');
-      window.requestAnimationFrame(() => {
-        target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
-      });
-    }
+  let scopeState = 'none';
+  let scopeStarted = false;
+
+  const applyScopeState = (state, { scroll = true, silent = false } = {}) => {
+    const changed = state !== scopeState;
+    scopeState = state;
+
+    if (passResult) passResult.classList.toggle('is-visible', state === 'pass');
+    if (customResult) customResult.classList.toggle('is-visible', state === 'custom');
     setStep(state === 'pass' ? 2 : 1);
-  };
 
-  const submitFitCheck = (event) => {
-    event.preventDefault();
-    if (!fitForm.reportValidity()) return;
+    /* silent = re-syncing after the browser restored checkbox state
+       (back/forward); not a new answer, so no events, status or scroll. */
+    if (!changed || silent) return;
 
-    const hasComplexNeed = complexCheckboxes.some((box) => box.checked);
-    const outcome = hasComplexNeed ? 'fail' : 'pass';
-
-    if (fitButton) {
-      fitButton.classList.add('is-sending');
-      fitButton.disabled = true;
-      fitButton.textContent = 'Checking…';
+    if (scopeStatus) {
+      scopeStatus.textContent = state === 'pass'
+        ? 'The $999 Website Launch Package covers your project. Order summary and checkout are shown below.'
+        : state === 'custom'
+          ? 'This sounds like a custom build. A Get a Custom Estimate link is shown below.'
+          : '';
     }
 
-    const formData = new FormData(fitForm);
-    const body = new URLSearchParams(formData).toString();
-
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body,
-    })
-      .catch(() => {
-        /* Even if the Netlify Forms submission fails (e.g. previewing
-           outside Netlify), the fit-check result itself still shows —
-           qualification isn't blocked by the forms backend. */
-      })
-      .finally(() => {
-        if (fitButton) {
-          fitButton.classList.remove('is-sending');
-          fitButton.disabled = false;
-          fitButton.textContent = 'Check My Fit →';
-        }
-        pushEvent(outcome === 'pass' ? 'fit_check_complete_pass' : 'fit_check_complete_fail', { reference_id: referenceId });
-        revealResult(outcome);
+    if (state === 'pass') pushEvent('scope_check_pass', { reference_id: referenceId });
+    if (state === 'custom') {
+      pushEvent('scope_check_custom', {
+        features: complexCheckboxes.filter((box) => box.checked).map((box) => box.dataset.fit),
       });
+    }
+
+    const target = state === 'pass' ? passResult : state === 'custom' ? customResult : null;
+    if (scroll && target) {
+      window.requestAnimationFrame(() => {
+        target.scrollIntoView({
+          behavior: prefersReducedMotion ? 'auto' : 'smooth',
+          block: state === 'pass' ? 'start' : 'nearest',
+        });
+      });
+    }
   };
 
-  if (fitForm) {
-    fitForm.addEventListener('submit', submitFitCheck);
+  const evaluateScope = (options) => {
+    if (complexCheckboxes.some((box) => box.checked)) {
+      applyScopeState('custom', options);
+    } else if (noneCheckbox && noneCheckbox.checked) {
+      applyScopeState('pass', options);
+    } else {
+      applyScopeState('none', options);
+    }
+  };
+
+  if (scopeRoot) {
+    /* "None of these" and the advanced options are mutually exclusive,
+       so the answer always stays meaningful. */
+    fitCheckboxes.forEach((box) => {
+      box.addEventListener('change', () => {
+        if (!scopeStarted) {
+          scopeStarted = true;
+          pushEvent('scope_check_start');
+        }
+        if (box === noneCheckbox && box.checked) {
+          complexCheckboxes.forEach((other) => { other.checked = false; });
+        } else if (box !== noneCheckbox && box.checked && noneCheckbox) {
+          noneCheckbox.checked = false;
+        }
+        evaluateScope({ scroll: true });
+      });
+    });
+
+    evaluateScope({ silent: true });
   }
+
+  document.querySelectorAll('[data-custom-estimate]').forEach((link) => {
+    link.addEventListener('click', () => pushEvent('custom_estimate_click'));
+  });
 
   /* =====================================================================
      CHECKOUT — Stripe Payment Link, $499 deposit (test mode)
      ===================================================================== */
   const checkoutButton = document.querySelector('[data-checkout-button]');
   const checkoutNotice = document.querySelector('[data-checkout-notice]');
-  const nameField = fitForm ? fitForm.querySelector('#fit-name') : null;
 
   if (checkoutButton) {
     checkoutButton.addEventListener('click', (event) => {
       event.preventDefault();
       pushEvent('checkout_start', { reference_id: referenceId, amount: 499, total: 999 });
 
-      /* Stash the order locally so launch-success.html / launch-intake.html
-         can read it back after the round trip through Stripe — no backend,
-         so this is the only way those pages know who just paid. It's
-         best-effort: if the buyer clears storage or switches browsers, the
-         pages still work, they just can't prefill anything. */
+      /* Keep only the order reference for the round trip through Stripe
+         so the intake page can tag the submission. No personal details
+         are stored — Stripe collects the buyer's email itself. */
       try {
         sessionStorage.setItem('wavyLaunchOrder', JSON.stringify({
           referenceId,
-          name: nameField ? nameField.value : '',
-          email: emailField ? emailField.value : '',
           at: new Date().toISOString(),
         }));
       } catch (err) {
@@ -361,12 +351,22 @@
 
       const url = new URL(STRIPE_TEST_DEPOSIT_PAYMENT_LINK);
       url.searchParams.set('client_reference_id', referenceId);
-      if (emailField && emailField.value) {
-        url.searchParams.set('prefilled_email', emailField.value);
-      }
       window.location.href = url.toString();
     });
   }
+
+  /* Coming back from Stripe with the browser's back button: browsers
+     restore the checked boxes after this script runs (or restore the whole
+     page from the back/forward cache with the checkout button still marked
+     busy). pageshow fires after either, so re-sync the result and reset
+     the button there — the visitor lands right back on their order summary. */
+  window.addEventListener('pageshow', () => {
+    if (checkoutButton) {
+      checkoutButton.classList.remove('is-sending');
+      checkoutButton.removeAttribute('aria-disabled');
+    }
+    if (scopeRoot) evaluateScope({ silent: true });
+  });
 
   /* =====================================================================
      SUCCESS PAGE — launch-success.html only (no-ops everywhere else)
@@ -382,11 +382,6 @@
       if (raw) savedOrder = JSON.parse(raw);
     } catch (err) {
       savedOrder = null;
-    }
-
-    const nameNode = successRoot.querySelector('[data-order-name]');
-    if (nameNode && savedOrder && savedOrder.name) {
-      nameNode.textContent = `, ${savedOrder.name}`;
     }
 
     const intakeLink = successRoot.querySelector('[data-intake-link]');
@@ -432,11 +427,6 @@
     const refValue = params.get('ref') || (savedOrder ? savedOrder.referenceId : '');
     if (refInput && refValue) refInput.value = refValue;
 
-    const emailInput = intakeForm.querySelector('[name="email"]');
-    if (emailInput && savedOrder && savedOrder.email && !emailInput.value) {
-      emailInput.value = savedOrder.email;
-    }
-
     const intakeButton = intakeForm.querySelector('[data-form-button]');
     intakeForm.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -464,4 +454,3 @@
     });
   }
 })();
-
