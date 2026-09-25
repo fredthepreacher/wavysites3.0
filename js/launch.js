@@ -311,7 +311,7 @@
   });
 
   /* =====================================================================
-     CHECKOUT — Stripe Payment Link, $499 deposit (test mode)
+     CHECKOUT — Stripe Payment Link, $499 live deposit
      ===================================================================== */
   const checkoutButton = document.querySelector('[data-checkout-button]');
   const checkoutNotice = document.querySelector('[data-checkout-notice]');
