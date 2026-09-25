@@ -9,23 +9,16 @@
   'use strict';
 
   /* =====================================================================
-     STRIPE TEST-MODE DEPOSIT PAYMENT LINK
+     STRIPE LIVE DEPOSIT PAYMENT LINK
      -------------------------------------------------------------------
      This charges the $499 deposit only — NOT the $999 total. The
-     remaining $500 is invoiced separately before launch (Version 1;
-     see the Phase 10A/10C notes on a second Payment Link later).
+     remaining $500 is invoiced separately before final launch.
 
-     Stripe TEST MODE Payment Link for "Wavy Sites — Website Launch
-     Package Deposit" ($499). If this is ever emptied, the checkout
-     button shows an honest "not connected yet" notice instead of a
-     dead link.
-
-     NEVER paste a LIVE Payment Link here until you have explicitly
-     approved switching Phase 10 to live payments. Flipping from test
-     to live later is swapping this one string — nothing else in the
-     funnel needs to change.
+     Live Payment Link for "Wavy Sites — Website Launch Package
+     Deposit" ($499). If this is ever emptied, the checkout button
+     shows an honest "not connected yet" notice instead of a dead link.
      ===================================================================== */
-  const STRIPE_TEST_DEPOSIT_PAYMENT_LINK = 'https://buy.stripe.com/test_28EcN6gtc9czcj5cQ7fIs00';
+  const STRIPE_DEPOSIT_PAYMENT_LINK = 'https://buy.stripe.com/eVqeVeb8ScoL0An4jBfIs02';
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -341,7 +334,7 @@
            checkout itself must not be blocked by that. */
       }
 
-      if (!STRIPE_TEST_DEPOSIT_PAYMENT_LINK) {
+      if (!STRIPE_DEPOSIT_PAYMENT_LINK) {
         if (checkoutNotice) checkoutNotice.classList.add('is-visible');
         return;
       }
@@ -349,7 +342,7 @@
       checkoutButton.classList.add('is-sending');
       checkoutButton.setAttribute('aria-disabled', 'true');
 
-      const url = new URL(STRIPE_TEST_DEPOSIT_PAYMENT_LINK);
+      const url = new URL(STRIPE_DEPOSIT_PAYMENT_LINK);
       url.searchParams.set('client_reference_id', referenceId);
       window.location.href = url.toString();
     });
