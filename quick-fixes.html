@@ -90,7 +90,7 @@
             <h3>Website Fix</h3>
             <p>Fix one clearly identified issue on one existing page.</p>
             <ul><li>Broken link or button</li><li>Incorrect text or image placement</li><li>Minor spacing or styling issue</li><li>Basic desktop and mobile check</li></ul>
-            <a href="#request" class="btn btn-primary">Request the $99 Fix</a>
+            <a href="#request" class="btn btn-primary" data-quick-service="Website Fix $99">Request the $99 Fix</a>
           </article>
           <article class="quick-card">
             <span class="eyebrow">02 · Responsive cleanup</span>
@@ -98,7 +98,7 @@
             <h3>Mobile Cleanup</h3>
             <p>Correct up to two responsive layout issues on one existing page.</p>
             <ul><li>Overflowing sections or cut-off text</li><li>Unusable mobile buttons or spacing</li><li>Phone-width layout check</li><li>One post-fix verification</li></ul>
-            <a href="#request" class="btn btn-primary">Request Mobile Cleanup</a>
+            <a href="#request" class="btn btn-primary" data-quick-service="Mobile Cleanup $149">Request Mobile Cleanup</a>
           </article>
           <article class="quick-card">
             <span class="eyebrow">03 · Conversion improvement</span>
@@ -106,7 +106,7 @@
             <h3>Landing Page Refresh</h3>
             <p>Improve one existing landing page without a full redesign.</p>
             <ul><li>Refresh headline and call to action</li><li>Clean up one content section</li><li>Mobile-friendly presentation</li><li>One revision round</li></ul>
-            <a href="#request" class="btn btn-primary">Request Page Refresh</a>
+            <a href="#request" class="btn btn-primary" data-quick-service="Landing Page Refresh $199">Request Page Refresh</a>
           </article>
         </div>
         <div class="quick-limits"><strong>What these packages don't include:</strong> New multi-page sites, new payment systems, custom applications, major redesigns, domain or hosting fees, paid plugins, and emergency guarantees. Bigger issues receive a separate quote. You approve any price change before work begins.</div>
@@ -165,5 +165,17 @@
     </div>
   </footer>
   <script src="js/main.js" defer></script>
+  <script>
+    // Keep the requested package when visitors jump from a pricing card to the inquiry form.
+    document.querySelectorAll('[data-quick-service]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var selectedService = link.getAttribute('data-quick-service');
+        var select = document.getElementById('quick-package');
+        if (select && selectedService) {
+          select.value = selectedService;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
