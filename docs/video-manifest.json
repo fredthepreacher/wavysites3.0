@@ -1,0 +1,28 @@
+{
+  "$comment": "Source of truth for portfolio video on wavysites.com. Internal: /docs/* is not served (netlify.toml). Extend by running scripts/media/add-video.ps1 and adding a row + card markup (docs/VIDEO_UPGRADE_2026-11-02.md).",
+  "package": "Wavy_Sites_Video_Upgrade_2026-11-02.zip (owner-supplied)",
+  "updated": "2026-11-02",
+  "permissions_note": "Fred confirmed on 2026-11-02 that written permission covers the people shown (Ten Ambassadors event footage incl. The Upmixer event archive frames; Starlight honorees), and public portfolio use of Native Sun Homes and Detail Kings 941. Detail Kings 941 approved as live client work.",
+  "hero": {
+    "id": "wavy-sites-portfolio-reel",
+    "video": "assets/video/hero/wavy-sites-portfolio-reel.mp4",
+    "video_small": "assets/video/hero/wavy-sites-portfolio-reel-960.mp4",
+    "poster": ["assets/video/hero/wavy-sites-portfolio-reel-640.webp", "assets/video/hero/wavy-sites-portfolio-reel-1280.webp", "assets/video/hero/wavy-sites-portfolio-reel.jpg"],
+    "bytes": { "video": 3345092, "video_small": 1218915, "poster_640": 19584, "poster_1280": 53878 },
+    "duration_seconds": 18.6,
+    "contains": ["community-pools", "adams-striping", "ten-ambassadors", "native-sun-homes", "starlight-awards", "vertical-builders", "detail-kings-941"],
+    "people_visible": true
+  },
+  "projects": [
+    { "id": "community-pools", "package_id": "community-pools", "name": "Community Pools LLC", "site_url": "https://communitypoolsllc.com/", "case_study": null, "people_visible": false, "bytes": { "video": 1015876, "poster_640": 12280, "poster_1280": 37078 } },
+    { "id": "vertical-builders", "package_id": "vertical-builders", "name": "Vertical Builders & Commercial", "site_url": "https://www.verticalbuildersandcommercial.com/", "case_study": "work/vertical-ops.html", "people_visible": false, "bytes": { "video": 1180775, "poster_640": 22882, "poster_1280": 59506 } },
+    { "id": "detail-kings-941", "package_id": "detail-kings-941", "name": "Detail Kings 941", "site_url": "https://detailkings941.vercel.app/", "case_study": null, "people_visible": false, "bytes": { "video": 1183478, "poster_640": 18410, "poster_1280": 53178 } },
+    { "id": "native-sun-homes", "package_id": "homebuilder-site", "name": "Native Sun Homes", "site_url": "https://nativesunhomes.com/", "mapping_note": "Package marked this clip unmapped; the recording shows Native Sun Homes branding. Confirm on preview.", "case_study": null, "people_visible": false, "bytes": { "video": 488341, "poster_640": 23996, "poster_1280": 74796 } },
+    { "id": "adams-striping", "package_id": "adams-striping", "name": "Adams Striping", "site_url": "https://adamsstriping.com/", "case_study": null, "people_visible": false, "bytes": { "video": 766402, "poster_640": 19596, "poster_1280": 53818 } },
+    { "id": "ten-ambassadors", "package_id": "association-site", "name": "Ten Ambassadors", "site_url": "https://tenambassadors.org/", "mapping_note": "Package marked this clip unmapped; the recording shows the Ten Ambassadors site. Confirm on preview.", "case_study": null, "people_visible": true, "bytes": { "video": 498499, "poster_640": 15990, "poster_1280": 43400 } },
+    { "id": "starlight-awards", "package_id": "starlight-awards", "name": "Starlight Awards", "site_url": "https://starlightawards.org/", "case_study": null, "people_visible": true, "date_sensitive": "Recording shows the 2026-12-11 event countdown; recapture after the event.", "bytes": { "video": 949144, "poster_640": 15442, "poster_1280": 38990 } }
+  ],
+  "pending": [
+    { "note": "Two more clips are expected. Add each with scripts/media/add-video.ps1, append a row here, copy one card block, and re-cut the hero reel if they should appear in it." }
+  ]
+}
