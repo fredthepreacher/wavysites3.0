@@ -2070,3 +2070,421 @@ textarea:focus {
     transform: none;
   }
 }
+
+/* ---------- 24. VIDEO PORTFOLIO & HERO REEL (2026-11) ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Hero: decorative reel behind the copy. The poster paints first; the video fades in only once playing. */
+.hero.has-reel {
+  isolation: isolate;
+}
+
+.hero.has-reel::before {
+  z-index: 1;
+}
+
+.hero.has-reel .hero-grid,
+.hero.has-reel .wave-divider {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-media img,
+.hero-media .hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% center;
+  /* Two-column hero: the reel lives on the right, behind the glass card; the copy side stays clean navy. */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 44%, rgba(0, 0, 0, 0.5) 60%, #000 78%);
+  mask-image: linear-gradient(90deg, transparent 0%, transparent 44%, rgba(0, 0, 0, 0.5) 60%, #000 78%);
+  /* Soft enough that other businesses' phone numbers and buttons read as motion, not as our details. */
+  filter: blur(1.2px) brightness(0.8) saturate(1.05);
+}
+
+.hero-media .hero-video {
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-out);
+}
+
+.hero-media.is-playing .hero-video {
+  opacity: 1;
+}
+
+/* Overlay: near-solid navy behind the headline, the reel shows through on the right. */
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(6, 18, 41, 0.97) 0%, rgba(6, 18, 41, 0.9) 40%, rgba(6, 18, 41, 0.7) 72%, rgba(6, 18, 41, 0.62) 100%),
+    linear-gradient(180deg, rgba(6, 18, 41, 0.45) 0%, rgba(6, 18, 41, 0) 28%, rgba(6, 18, 41, 0.82) 100%);
+}
+
+.hero-video-toggle {
+  position: absolute;
+  right: clamp(16px, 3vw, 32px);
+  bottom: calc(clamp(48px, 8vw, 110px) + 16px);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(6, 18, 41, 0.78);
+  color: var(--text);
+  font: 600 0.82rem/1 var(--font-body);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: border-color var(--dur) ease, background var(--dur) ease;
+}
+
+.hero-video-toggle:hover {
+  border-color: rgba(37, 212, 180, 0.6);
+  background: rgba(6, 18, 41, 0.92);
+}
+
+.hero-video-toggle:focus-visible,
+.video-toggle:focus-visible {
+  outline: 3px solid var(--brand-2);
+  outline-offset: 3px;
+}
+
+.hero-video-toggle[hidden],
+.video-toggle[hidden] {
+  display: none;
+}
+
+.toggle-icon {
+  display: inline-block;
+  width: 10px;
+  height: 12px;
+  border-left: 3px solid currentColor;
+  border-right: 3px solid currentColor;
+}
+
+.is-paused > .toggle-icon,
+.video-toggle:not(.is-playing) > .toggle-icon {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid currentColor;
+  border-right: 0;
+}
+
+/* Project video cards */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.video-grid.is-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.video-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--ink-soft);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) ease, border-color var(--dur) ease;
+}
+
+.video-card:hover,
+.video-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+  border-color: rgba(20, 144, 192, 0.36);
+}
+
+.video-grid .video-card.is-lead {
+  grid-column: 1 / -1;
+  grid-template-rows: none;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+.video-card-frame {
+  padding: 12px 12px 0;
+}
+
+.video-card.is-lead .video-card-frame {
+  padding: 16px;
+}
+
+.video-card-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border-radius: 16px 16px 0 0;
+  background: #0a1d3a;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.video-card-bar i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  flex: none;
+}
+
+.video-card-bar span {
+  margin-left: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.video-card-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0 0 16px 16px;
+  background: #0a1d3a;
+}
+
+.video-card-media picture,
+.video-card-media img,
+.video-card-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-card-media img,
+.video-card-video {
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s var(--ease-out), opacity 0.45s ease;
+}
+
+.video-card-video {
+  opacity: 0;
+}
+
+.video-card.is-playing .video-card-video {
+  opacity: 1;
+}
+
+.video-card:hover .video-card-media img {
+  transform: scale(1.03);
+}
+
+.video-card-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.video-toggle {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(6, 18, 41, 0.82);
+  color: var(--white);
+  font: 700 0.75rem/1 var(--font-body);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.video-card.video-failed .video-toggle {
+  display: none;
+}
+
+.video-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 22px 20px;
+}
+
+.video-card.is-lead .video-card-body {
+  padding: 24px 32px 24px 12px;
+}
+
+.video-card-tag {
+  color: #06758e;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.72rem;
+}
+
+.video-card h3 {
+  margin: 0;
+}
+
+.video-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.video-card-links {
+  margin-top: auto;
+  padding-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+
+.video-card-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  color: #035f7a;
+  font-weight: 800;
+  transition: gap var(--dur) ease, color var(--dur) ease;
+}
+
+.video-card-links a:hover {
+  gap: 10px;
+  color: #06758e;
+}
+
+.portfolio-also {
+  margin-top: 26px;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.portfolio-also a {
+  color: #035f7a;
+  font-weight: 700;
+}
+
+.project-status {
+  color: var(--ink-muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1040px) {
+  /* Single-column hero: the headline sits over the whole reel, so the overlay is even and strong. */
+  .hero-media img,
+  .hero-media .hero-video {
+    object-position: center top;
+    filter: blur(1.5px) saturate(0.9);
+    transform: scale(1.04);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .hero-media::after {
+    background:
+      linear-gradient(180deg, rgba(6, 18, 41, 0.92) 0%, rgba(6, 18, 41, 0.9) 55%, rgba(6, 18, 41, 0.96) 100%);
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .video-grid .video-card.is-lead {
+    grid-template-columns: 1fr;
+  }
+
+  .video-card.is-lead .video-card-frame {
+    padding: 12px 12px 0;
+  }
+
+  .video-card.is-lead .video-card-body {
+    padding: 18px 22px 20px;
+  }
+}
+
+
+@media (max-width: 820px) {
+  /* Phones keep the original hero (see js/video.js): no reel, no poster. */
+  .hero-media {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .video-grid,
+  .video-grid.is-two {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-video-toggle {
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-card:hover,
+  .video-card:focus-within {
+    transform: none;
+  }
+
+  .video-card:hover .video-card-media img {
+    transform: none;
+  }
+}
+
+.portfolio-subhead {
+  margin: 48px 0 18px;
+  font-size: 1.15rem;
+}
+
+.local-work-intro {
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+
+/* Contrast fixes found during the video QA (both pre-existing on the live site). */
+.section:not(.section-dark) .tech-note {
+  color: var(--ink-muted);
+}
+
+.section:not(.section-dark) .tech-note a {
+  color: #035f7a;
+  font-weight: 700;
+}
+
+.brand small {
+  color: #c4d2e0;
+}
